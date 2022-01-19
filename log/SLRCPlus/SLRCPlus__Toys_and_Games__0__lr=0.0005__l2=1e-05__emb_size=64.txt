@@ -1,0 +1,194 @@
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-14 20:06:12 ---------------------------------------------
+INFO:root:
+==================================
+ Arguments       | Values         
+==================================
+ batch_size      | 256           
+ dataset         | Toys_and_Games
+ dropout         | 0             
+ early_stop      | 10            
+ emb_size        | 64            
+ epoch           | 200           
+ eval_batch_size | 256           
+ gpu             | 0             
+ history_max     | 20            
+ include_attr    | 0             
+ l2              | 1e-05         
+ lr              | 0.0005        
+ num_neg         | 1             
+ num_workers     | 5             
+ optimizer       | Adam          
+ random_seed     | 0             
+ test_all        | 0             
+ time_scalar     | 8640000       
+ topk            | 5,10,20,50    
+==================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Toys_and_Games" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 19412, "# item": 11924, "# entry": 130721
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:"# relation": 3, "# triplet": 611915
+INFO:root:Save corpus to ../data/Toys_and_Games\KGReader.pkl
+INFO:root:#params: 2215846
+INFO:root:SLRCPlus(
+  (u_embeddings): Embedding(19413, 64)
+  (i_embeddings): Embedding(11925, 64)
+  (user_bias): Embedding(19413, 1)
+  (item_bias): Embedding(11925, 1)
+  (alphas): Embedding(11925, 3)
+  (pis): Embedding(11925, 3)
+  (betas): Embedding(11925, 3)
+  (sigmas): Embedding(11925, 3)
+  (mus): Embedding(11925, 3)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6746 [19.6 s]    dev=(HR@5:0.3655,NDCG@5:0.2824) [10.3 s] *
+INFO:root:Epoch 2     loss=0.6325 [19.6 s]    dev=(HR@5:0.4302,NDCG@5:0.3255) [10.3 s] *
+INFO:root:Epoch 3     loss=0.5739 [19.9 s]    dev=(HR@5:0.4487,NDCG@5:0.3288) [10.2 s] *
+INFO:root:Epoch 4     loss=0.5188 [24.1 s]    dev=(HR@5:0.4384,NDCG@5:0.3193) [10.3 s]
+INFO:root:Epoch 5     loss=0.4781 [23.9 s]    dev=(HR@5:0.4363,NDCG@5:0.3141) [10.5 s]
+INFO:root:Epoch 6     loss=0.4479 [23.9 s]    dev=(HR@5:0.4333,NDCG@5:0.3094) [10.2 s]
+INFO:root:Epoch 7     loss=0.4246 [24.0 s]    dev=(HR@5:0.4384,NDCG@5:0.3087) [10.3 s]
+INFO:root:Epoch 8     loss=0.4051 [24.0 s]    dev=(HR@5:0.4363,NDCG@5:0.3121) [10.3 s]
+INFO:root:Epoch 9     loss=0.3894 [23.9 s]    dev=(HR@5:0.4374,NDCG@5:0.3122) [10.2 s]
+INFO:root:Epoch 10    loss=0.3751 [23.9 s]    dev=(HR@5:0.4312,NDCG@5:0.3079) [10.3 s]
+INFO:root:Epoch 11    loss=0.3649 [23.9 s]    dev=(HR@5:0.4333,NDCG@5:0.3053) [10.2 s]
+INFO:root:Epoch 12    loss=0.3541 [23.9 s]    dev=(HR@5:0.4312,NDCG@5:0.3071) [10.3 s]
+INFO:root:Epoch 13    loss=0.3444 [23.9 s]    dev=(HR@5:0.4302,NDCG@5:0.3067) [10.2 s]
+INFO:root:Epoch 14    loss=0.3363 [24.0 s]    dev=(HR@5:0.4302,NDCG@5:0.3073) [10.4 s]
+INFO:root:Epoch 15    loss=0.3298 [24.1 s]    dev=(HR@5:0.4353,NDCG@5:0.3105) [10.2 s]
+INFO:root:Epoch 16    loss=0.3243 [23.8 s]    dev=(HR@5:0.4322,NDCG@5:0.3121) [10.3 s]
+INFO:root:Epoch 17    loss=0.3183 [23.8 s]    dev=(HR@5:0.4333,NDCG@5:0.3139) [10.2 s]
+INFO:root:Epoch 18    loss=0.3125 [23.9 s]    dev=(HR@5:0.4435,NDCG@5:0.3178) [10.3 s]
+INFO:root:Epoch 19    loss=0.3069 [23.8 s]    dev=(HR@5:0.4425,NDCG@5:0.3178) [10.2 s]
+INFO:root:Epoch 20    loss=0.3024 [23.7 s]    dev=(HR@5:0.4425,NDCG@5:0.3189) [10.2 s]
+INFO:root:Epoch 21    loss=0.2978 [23.8 s]    dev=(HR@5:0.4425,NDCG@5:0.3203) [10.3 s]
+INFO:root:Epoch 22    loss=0.2940 [23.8 s]    dev=(HR@5:0.4363,NDCG@5:0.3155) [10.2 s]
+INFO:root:Epoch 23    loss=0.2897 [23.8 s]    dev=(HR@5:0.4415,NDCG@5:0.3228) [10.2 s]
+INFO:root:Early stop at 23 based on dev result.
+INFO:root:
+Best Iter(dev)=    3	 dev=(HR@5:0.4487,NDCG@5:0.3288) [773.3 s] 
+INFO:root:Load model from ../model/SLRCPlus/SLRCPlus__Toys_and_Games__0__lr=0.0005__l2=1e-05__emb_size=64.pt
+INFO:root:
+Test After Training: (HR@5:0.3542,NDCG@5:0.2516,HR@10:0.5246,NDCG@10:0.3064,HR@20:0.6684,NDCG@20:0.3427,HR@50:0.8152,NDCG@50:0.3718)
+INFO:root:
+--------------------------------------------- END: 2022-01-14 20:19:23 ---------------------------------------------
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-19 00:38:12 ---------------------------------------------
+INFO:root:
+==================================
+ Arguments       | Values         
+==================================
+ batch_size      | 256           
+ dataset         | Toys_and_Games
+ dropout         | 0             
+ early_stop      | 10            
+ emb_size        | 64            
+ epoch           | 200           
+ eval_batch_size | 256           
+ gpu             | 0             
+ history_max     | 20            
+ include_attr    | 0             
+ l2              | 1e-05         
+ lr              | 0.0005        
+ num_neg         | 1             
+ num_workers     | 5             
+ optimizer       | Adam          
+ random_seed     | 0             
+ test_all        | 0             
+ time_scalar     | 8640000       
+ topk            | 5,10,20,50    
+==================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Toys_and_Games" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 19412, "# item": 11924, "# entry": 165649
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:"# relation": 3, "# triplet": 611915
+INFO:root:Save corpus to ../data/Toys_and_Games\KGReader.pkl
+INFO:root:#params: 2215846
+INFO:root:SLRCPlus(
+  (u_embeddings): Embedding(19413, 64)
+  (i_embeddings): Embedding(11925, 64)
+  (user_bias): Embedding(19413, 1)
+  (item_bias): Embedding(11925, 1)
+  (alphas): Embedding(11925, 3)
+  (pis): Embedding(11925, 3)
+  (betas): Embedding(11925, 3)
+  (sigmas): Embedding(11925, 3)
+  (mus): Embedding(11925, 3)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6746 [30.4 s]    dev=(HR@5:0.4229,NDCG@5:0.3495) [20.7 s] *
+INFO:root:Epoch 2     loss=0.6325 [26.6 s]    dev=(HR@5:0.4382,NDCG@5:0.3595) [18.5 s] *
+INFO:root:Epoch 3     loss=0.5739 [28.1 s]    dev=(HR@5:0.4438,NDCG@5:0.3630) [18.5 s] *
+INFO:root:Epoch 4     loss=0.5188 [30.2 s]    dev=(HR@5:0.4467,NDCG@5:0.3654) [17.2 s] *
+INFO:root:Epoch 5     loss=0.4781 [32.0 s]    dev=(HR@5:0.4496,NDCG@5:0.3675) [16.8 s] *
+INFO:root:Epoch 6     loss=0.4479 [27.3 s]    dev=(HR@5:0.4546,NDCG@5:0.3709) [15.3 s] *
+INFO:root:Epoch 7     loss=0.4246 [26.7 s]    dev=(HR@5:0.4573,NDCG@5:0.3721) [15.6 s] *
+INFO:root:Epoch 8     loss=0.4051 [27.4 s]    dev=(HR@5:0.4592,NDCG@5:0.3734) [15.1 s] *
+INFO:root:Epoch 9     loss=0.3894 [26.0 s]    dev=(HR@5:0.4606,NDCG@5:0.3748) [15.9 s] *
+INFO:root:Epoch 10    loss=0.3751 [26.2 s]    dev=(HR@5:0.4628,NDCG@5:0.3763) [15.2 s] *
+INFO:root:Epoch 11    loss=0.3649 [26.0 s]    dev=(HR@5:0.4652,NDCG@5:0.3776) [15.2 s] *
+INFO:root:Epoch 12    loss=0.3541 [26.2 s]    dev=(HR@5:0.4668,NDCG@5:0.3787) [15.6 s] *
+INFO:root:Epoch 13    loss=0.3444 [27.4 s]    dev=(HR@5:0.4678,NDCG@5:0.3793) [15.2 s] *
+INFO:root:Epoch 14    loss=0.3363 [26.2 s]    dev=(HR@5:0.4693,NDCG@5:0.3807) [15.4 s] *
+INFO:root:Epoch 15    loss=0.3298 [26.3 s]    dev=(HR@5:0.4700,NDCG@5:0.3812) [15.9 s] *
+INFO:root:Epoch 16    loss=0.3243 [26.6 s]    dev=(HR@5:0.4712,NDCG@5:0.3822) [15.4 s] *
+INFO:root:Epoch 17    loss=0.3183 [26.5 s]    dev=(HR@5:0.4717,NDCG@5:0.3825) [15.9 s] *
+INFO:root:Epoch 18    loss=0.3125 [26.8 s]    dev=(HR@5:0.4727,NDCG@5:0.3828) [15.5 s] *
+INFO:root:Epoch 19    loss=0.3069 [26.8 s]    dev=(HR@5:0.4725,NDCG@5:0.3828) [15.8 s]
+INFO:root:Epoch 20    loss=0.3024 [26.2 s]    dev=(HR@5:0.4730,NDCG@5:0.3836) [15.5 s] *
+INFO:root:Epoch 21    loss=0.2978 [26.3 s]    dev=(HR@5:0.4736,NDCG@5:0.3836) [15.8 s]
+INFO:root:Epoch 22    loss=0.2940 [26.9 s]    dev=(HR@5:0.4734,NDCG@5:0.3835) [15.7 s]
+INFO:root:Epoch 23    loss=0.2897 [26.9 s]    dev=(HR@5:0.4746,NDCG@5:0.3845) [15.9 s] *
+INFO:root:Epoch 24    loss=0.2871 [26.4 s]    dev=(HR@5:0.4760,NDCG@5:0.3846) [15.7 s] *
+INFO:root:Epoch 25    loss=0.2855 [26.1 s]    dev=(HR@5:0.4756,NDCG@5:0.3846) [15.1 s]
+INFO:root:Epoch 26    loss=0.2825 [26.3 s]    dev=(HR@5:0.4772,NDCG@5:0.3853) [15.4 s] *
+INFO:root:Epoch 27    loss=0.2802 [26.4 s]    dev=(HR@5:0.4765,NDCG@5:0.3849) [15.9 s]
+INFO:root:Epoch 28    loss=0.2758 [26.5 s]    dev=(HR@5:0.4765,NDCG@5:0.3851) [15.6 s]
+INFO:root:Epoch 29    loss=0.2738 [26.1 s]    dev=(HR@5:0.4768,NDCG@5:0.3849) [15.5 s]
+INFO:root:Epoch 30    loss=0.2712 [26.5 s]    dev=(HR@5:0.4765,NDCG@5:0.3852) [15.3 s]
+INFO:root:Epoch 31    loss=0.2693 [26.1 s]    dev=(HR@5:0.4769,NDCG@5:0.3852) [15.3 s]
+INFO:root:Epoch 32    loss=0.2666 [26.2 s]    dev=(HR@5:0.4778,NDCG@5:0.3859) [15.3 s] *
+INFO:root:Epoch 33    loss=0.2659 [26.7 s]    dev=(HR@5:0.4776,NDCG@5:0.3858) [15.8 s]
+INFO:root:Epoch 34    loss=0.2633 [26.5 s]    dev=(HR@5:0.4772,NDCG@5:0.3857) [15.0 s]
+INFO:root:Epoch 35    loss=0.2621 [26.2 s]    dev=(HR@5:0.4781,NDCG@5:0.3858) [15.4 s]
+INFO:root:Epoch 36    loss=0.2610 [26.3 s]    dev=(HR@5:0.4780,NDCG@5:0.3855) [15.9 s]
+INFO:root:Epoch 37    loss=0.2592 [26.3 s]    dev=(HR@5:0.4779,NDCG@5:0.3853) [15.3 s]
+INFO:root:Epoch 38    loss=0.2572 [25.9 s]    dev=(HR@5:0.4785,NDCG@5:0.3860) [15.3 s] *
+INFO:root:Epoch 39    loss=0.2550 [26.7 s]    dev=(HR@5:0.4789,NDCG@5:0.3861) [16.1 s] *
+INFO:root:Epoch 40    loss=0.2536 [26.0 s]    dev=(HR@5:0.4786,NDCG@5:0.3856) [15.4 s]
+INFO:root:Epoch 41    loss=0.2534 [26.8 s]    dev=(HR@5:0.4781,NDCG@5:0.3851) [15.5 s]
+INFO:root:Epoch 42    loss=0.2513 [25.8 s]    dev=(HR@5:0.4777,NDCG@5:0.3851) [15.1 s]
+INFO:root:Epoch 43    loss=0.2495 [25.5 s]    dev=(HR@5:0.4774,NDCG@5:0.3848) [15.2 s]
+INFO:root:Epoch 44    loss=0.2500 [27.0 s]    dev=(HR@5:0.4774,NDCG@5:0.3849) [15.9 s]
+INFO:root:Epoch 45    loss=0.2476 [26.3 s]    dev=(HR@5:0.4787,NDCG@5:0.3856) [15.2 s]
+INFO:root:Epoch 46    loss=0.2483 [25.9 s]    dev=(HR@5:0.4783,NDCG@5:0.3854) [15.1 s]
+INFO:root:Epoch 47    loss=0.2473 [26.0 s]    dev=(HR@5:0.4777,NDCG@5:0.3855) [15.3 s]
+INFO:root:Epoch 48    loss=0.2452 [26.1 s]    dev=(HR@5:0.4767,NDCG@5:0.3851) [16.0 s]
+INFO:root:Epoch 49    loss=0.2446 [26.3 s]    dev=(HR@5:0.4772,NDCG@5:0.3851) [15.5 s]
+INFO:root:Epoch 50    loss=0.2433 [26.1 s]    dev=(HR@5:0.4772,NDCG@5:0.3849) [15.3 s]
+INFO:root:Epoch 51    loss=0.2430 [26.5 s]    dev=(HR@5:0.4756,NDCG@5:0.3841) [15.5 s]
+INFO:root:Epoch 52    loss=0.2435 [26.1 s]    dev=(HR@5:0.4756,NDCG@5:0.3844) [15.7 s]
+INFO:root:Epoch 53    loss=0.2423 [26.0 s]    dev=(HR@5:0.4755,NDCG@5:0.3842) [16.0 s]
+INFO:root:Epoch 54    loss=0.2406 [26.4 s]    dev=(HR@5:0.4761,NDCG@5:0.3841) [15.6 s]
+INFO:root:Epoch 55    loss=0.2394 [26.4 s]    dev=(HR@5:0.4765,NDCG@5:0.3844) [15.7 s]
+INFO:root:Epoch 56    loss=0.2408 [26.2 s]    dev=(HR@5:0.4751,NDCG@5:0.3838) [15.6 s]
+INFO:root:Epoch 57    loss=0.2396 [25.8 s]    dev=(HR@5:0.4763,NDCG@5:0.3840) [15.1 s]
+INFO:root:Epoch 58    loss=0.2388 [26.5 s]    dev=(HR@5:0.4747,NDCG@5:0.3833) [15.8 s]
+INFO:root:Epoch 59    loss=0.2376 [26.1 s]    dev=(HR@5:0.4741,NDCG@5:0.3831) [15.7 s]
+INFO:root:Early stop at 59 based on dev result.
+INFO:root:
+Best Iter(dev)=   39	 dev=(HR@5:0.4789,NDCG@5:0.3861) [2500.9 s] 
+INFO:root:Load model from ../model/SLRCPlus/SLRCPlus__Toys_and_Games__0__lr=0.0005__l2=1e-05__emb_size=64.pt
+INFO:root:
+Test After Training: (HR@5:0.4431,NDCG@5:0.3551,HR@10:0.5300,NDCG@10:0.3831,HR@20:0.6298,NDCG@20:0.4084,HR@50:0.7869,NDCG@50:0.4394)
+INFO:root:
+--------------------------------------------- END: 2022-01-19 01:21:09 ---------------------------------------------

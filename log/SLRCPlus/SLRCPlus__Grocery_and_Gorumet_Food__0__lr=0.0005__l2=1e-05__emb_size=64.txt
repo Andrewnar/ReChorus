@@ -1,0 +1,56 @@
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 14:20:14 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gorum...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ include_attr    | 0                   
+ l2              | 1e-05               
+ lr              | 0.0005              
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ time_scalar     | 8640000             
+ topk            | 5,10,20,50          
+========================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gorumet_Food" 
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 14:27:51 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gorum...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ include_attr    | 0                   
+ l2              | 1e-05               
+ lr              | 0.0005              
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ time_scalar     | 8640000             
+ topk            | 5,10,20,50          
+========================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gorumet_Food" 

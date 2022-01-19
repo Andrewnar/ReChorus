@@ -1,0 +1,64 @@
+INFO:root:Namespace(model_name='Caser')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 17:43:38 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ L               | 5                   
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             | 0                   
+ history_max     | 20                  
+ l2              | 0.0001              
+ lr              | 0.001               
+ num_horizon     | 64                  
+ num_neg         | 1                   
+ num_vertical    | 32                  
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1719648
+INFO:root:Caser(
+  (u_embeddings): Embedding(14682, 64)
+  (i_embeddings): Embedding(8714, 64, padding_idx=0)
+  (conv_h): ModuleList(
+    (0): Conv2d(1, 64, kernel_size=(1, 64), stride=(1, 1))
+    (1): Conv2d(1, 64, kernel_size=(2, 64), stride=(1, 1))
+    (2): Conv2d(1, 64, kernel_size=(3, 64), stride=(1, 1))
+    (3): Conv2d(1, 64, kernel_size=(4, 64), stride=(1, 1))
+    (4): Conv2d(1, 64, kernel_size=(5, 64), stride=(1, 1))
+  )
+  (conv_v): Conv2d(1, 32, kernel_size=(20, 1), stride=(1, 1))
+  (fc): Linear(in_features=2368, out_features=64, bias=True)
+  (out): Linear(in_features=128, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.4774 [85.2 s]    dev=(HR@5:0.3011,NDCG@5:0.1990) [697.9 s] *
+INFO:root:Epoch 2     loss=0.4056 [79.5 s]    dev=(HR@5:0.3282,NDCG@5:0.2193) [16.3 s] *
+INFO:root:Epoch 3     loss=0.3873 [84.6 s]    dev=(HR@5:0.3360,NDCG@5:0.2251) [16.6 s] *
+INFO:root:Epoch 4     loss=0.3767 [358.8 s]    dev=(HR@5:0.3466,NDCG@5:0.2342) [68.6 s] *
+INFO:root:Epoch 5     loss=0.3644 [1828.3 s]    dev=(HR@5:0.3552,NDCG@5:0.2419) [66.1 s] *
+INFO:root:Epoch 6     loss=0.3522 [1018.8 s]    dev=(HR@5:0.3679,NDCG@5:0.2490) [70.1 s] *
+INFO:root:Epoch 7     loss=0.3436 [13336.7 s]    dev=(HR@5:0.3665,NDCG@5:0.2524) [37.4 s] *
+INFO:root:Epoch 8     loss=0.3318 [45463.1 s]    dev=(HR@5:0.3637,NDCG@5:0.2479) [42.3 s]
+INFO:root:Epoch 9     loss=0.3239 [275.5 s]    dev=(HR@5:0.3698,NDCG@5:0.2560) [40.6 s] *
+INFO:root:Epoch 10    loss=0.3176 [296.0 s]    dev=(HR@5:0.3703,NDCG@5:0.2562) [39.4 s] *
+INFO:root:Epoch 11    loss=0.3102 [270.4 s]    dev=(HR@5:0.3704,NDCG@5:0.2543) [38.3 s]
+INFO:root:Epoch 12    loss=0.3015 [267.2 s]    dev=(HR@5:0.3742,NDCG@5:0.2555) [37.1 s]
+INFO:root:Epoch 13    loss=0.2952 [246.2 s]    dev=(HR@5:0.3656,NDCG@5:0.2484) [36.9 s]
+INFO:root:Epoch 14    loss=0.2879 [247.6 s]    dev=(HR@5:0.3696,NDCG@5:0.2521) [36.8 s]
+INFO:root:Epoch 15    loss=0.2789 [246.4 s]    dev=(HR@5:0.3786,NDCG@5:0.2667) [37.0 s] *
+INFO:root:Epoch 16    loss=0.2664 [245.0 s]    dev=(HR@5:0.3813,NDCG@5:0.2681) [36.5 s] *
+INFO:root:Epoch 17    loss=0.2591 [246.0 s]    dev=(HR@5:0.3844,NDCG@5:0.2717) [36.7 s] *
+INFO:root:Epoch 18    loss=0.2491 [246.0 s]    dev=(HR@5:0.3819,NDCG@5:0.2730) [36.7 s] *
+INFO:root:Epoch 19    loss=0.2411 [245.0 s]    dev=(HR@5:0.3823,NDCG@5:0.2724) [36.8 s]

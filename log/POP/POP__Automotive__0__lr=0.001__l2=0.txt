@@ -1,0 +1,34 @@
+INFO:root:Namespace(model_name='POP')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 00:19:44 ---------------------------------------------
+INFO:root:
+==============================
+ Arguments       | Values     
+==============================
+ batch_size      | 256       
+ dataset         | Automotive
+ dropout         | 0         
+ early_stop      | 10        
+ epoch           | 200       
+ eval_batch_size | 256       
+ gpu             | 0         
+ l2              | 0         
+ lr              | 0.001     
+ num_neg         | 1         
+ num_workers     | 5         
+ optimizer       | Adam      
+ random_seed     | 0         
+ test_all        | 0         
+ topk            | 5,10,20,50
+==============================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Automotive" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 2928, "# item": 1835, "# entry": 14945
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Automotive\BaseReader.pkl
+INFO:root:#params: 0
+INFO:root:POP()
+INFO:root:
+Test After Training: (HR@5:0.1402,NDCG@5:0.0966,HR@10:0.2134,NDCG@10:0.1201,HR@20:0.3049,NDCG@20:0.1430,HR@50:0.5305,NDCG@50:0.1869)
+INFO:root:
+--------------------------------------------- END: 2022-01-13 00:19:53 ---------------------------------------------

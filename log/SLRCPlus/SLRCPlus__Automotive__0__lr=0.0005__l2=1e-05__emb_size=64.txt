@@ -1,0 +1,186 @@
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 01:42:17 ---------------------------------------------
+INFO:root:
+==============================
+ Arguments       | Values     
+==============================
+ batch_size      | 256       
+ dataset         | Automotive
+ dropout         | 0         
+ early_stop      | 10        
+ emb_size        | 64        
+ epoch           | 200       
+ eval_batch_size | 256       
+ gpu             | 0         
+ history_max     | 20        
+ include_attr    | 0         
+ l2              | 1e-05     
+ lr              | 0.0005    
+ num_neg         | 1         
+ num_workers     | 5         
+ optimizer       | Adam      
+ random_seed     | 0         
+ test_all        | 0         
+ time_scalar     | 8640000   
+ topk            | 5,10,20,50
+==============================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Automotive" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 2928, "# item": 1835, "# entry": 14945
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:"# relation": 3, "# triplet": 73433
+INFO:root:Save corpus to ../data/Automotive\KGReader.pkl
+INFO:root:#params: 337266
+INFO:root:SLRCPlus(
+  (u_embeddings): Embedding(2929, 64)
+  (i_embeddings): Embedding(1836, 64)
+  (user_bias): Embedding(2929, 1)
+  (item_bias): Embedding(1836, 1)
+  (alphas): Embedding(1836, 3)
+  (pis): Embedding(1836, 3)
+  (betas): Embedding(1836, 3)
+  (sigmas): Embedding(1836, 3)
+  (mus): Embedding(1836, 3)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6905 [7.6 s]    dev=(HR@5:0.2073,NDCG@5:0.1427) [7.1 s] *
+INFO:root:Epoch 2     loss=0.6835 [7.5 s]    dev=(HR@5:0.2866,NDCG@5:0.1979) [7.1 s] *
+INFO:root:Epoch 3     loss=0.6761 [7.4 s]    dev=(HR@5:0.2805,NDCG@5:0.1964) [7.0 s]
+INFO:root:Epoch 4     loss=0.6683 [7.4 s]    dev=(HR@5:0.2988,NDCG@5:0.2099) [6.9 s] *
+INFO:root:Epoch 5     loss=0.6596 [7.3 s]    dev=(HR@5:0.3171,NDCG@5:0.2178) [7.0 s] *
+INFO:root:Epoch 6     loss=0.6495 [7.7 s]    dev=(HR@5:0.3171,NDCG@5:0.2204) [7.3 s] *
+INFO:root:Epoch 7     loss=0.6382 [7.4 s]    dev=(HR@5:0.3293,NDCG@5:0.2282) [7.0 s] *
+INFO:root:Epoch 8     loss=0.6251 [7.7 s]    dev=(HR@5:0.3293,NDCG@5:0.2276) [7.4 s]
+INFO:root:Epoch 9     loss=0.6112 [7.7 s]    dev=(HR@5:0.3476,NDCG@5:0.2350) [7.2 s] *
+INFO:root:Epoch 10    loss=0.5951 [7.6 s]    dev=(HR@5:0.3598,NDCG@5:0.2477) [7.0 s] *
+INFO:root:Epoch 11    loss=0.5788 [7.6 s]    dev=(HR@5:0.3598,NDCG@5:0.2477) [7.3 s] *
+INFO:root:Epoch 12    loss=0.5619 [7.4 s]    dev=(HR@5:0.3598,NDCG@5:0.2489) [7.0 s] *
+INFO:root:Epoch 13    loss=0.5442 [7.3 s]    dev=(HR@5:0.3476,NDCG@5:0.2495) [7.0 s] *
+INFO:root:Epoch 14    loss=0.5260 [7.5 s]    dev=(HR@5:0.3415,NDCG@5:0.2434) [6.9 s]
+INFO:root:Epoch 15    loss=0.5092 [7.5 s]    dev=(HR@5:0.3354,NDCG@5:0.2422) [6.9 s]
+INFO:root:Epoch 16    loss=0.4912 [7.3 s]    dev=(HR@5:0.3293,NDCG@5:0.2388) [7.0 s]
+INFO:root:Epoch 17    loss=0.4739 [7.3 s]    dev=(HR@5:0.3293,NDCG@5:0.2365) [6.9 s]
+INFO:root:Epoch 18    loss=0.4563 [7.3 s]    dev=(HR@5:0.3293,NDCG@5:0.2378) [7.0 s]
+INFO:root:Epoch 19    loss=0.4393 [7.4 s]    dev=(HR@5:0.3293,NDCG@5:0.2407) [7.0 s]
+INFO:root:Epoch 20    loss=0.4232 [7.3 s]    dev=(HR@5:0.3354,NDCG@5:0.2431) [6.9 s]
+INFO:root:Epoch 21    loss=0.4077 [7.3 s]    dev=(HR@5:0.3293,NDCG@5:0.2429) [7.0 s]
+INFO:root:Epoch 22    loss=0.3937 [7.3 s]    dev=(HR@5:0.3232,NDCG@5:0.2403) [6.9 s]
+INFO:root:Epoch 23    loss=0.3765 [7.4 s]    dev=(HR@5:0.3232,NDCG@5:0.2349) [6.9 s]
+INFO:root:Epoch 24    loss=0.3640 [7.3 s]    dev=(HR@5:0.3171,NDCG@5:0.2333) [6.9 s]
+INFO:root:Epoch 25    loss=0.3518 [7.4 s]    dev=(HR@5:0.3110,NDCG@5:0.2299) [6.9 s]
+INFO:root:Epoch 26    loss=0.3373 [7.2 s]    dev=(HR@5:0.3171,NDCG@5:0.2325) [7.0 s]
+INFO:root:Epoch 27    loss=0.3252 [7.4 s]    dev=(HR@5:0.3171,NDCG@5:0.2305) [6.9 s]
+INFO:root:Epoch 28    loss=0.3133 [7.4 s]    dev=(HR@5:0.3110,NDCG@5:0.2308) [7.0 s]
+INFO:root:Epoch 29    loss=0.3009 [7.4 s]    dev=(HR@5:0.3171,NDCG@5:0.2311) [6.9 s]
+INFO:root:Epoch 30    loss=0.2905 [7.4 s]    dev=(HR@5:0.3171,NDCG@5:0.2293) [6.9 s]
+INFO:root:Epoch 31    loss=0.2791 [7.3 s]    dev=(HR@5:0.3171,NDCG@5:0.2284) [7.2 s]
+INFO:root:Epoch 32    loss=0.2699 [7.4 s]    dev=(HR@5:0.3110,NDCG@5:0.2260) [7.0 s]
+INFO:root:Epoch 33    loss=0.2616 [7.4 s]    dev=(HR@5:0.3110,NDCG@5:0.2247) [7.0 s]
+INFO:root:Early stop at 33 based on dev result.
+INFO:root:
+Best Iter(dev)=   13	 dev=(HR@5:0.3476,NDCG@5:0.2495) [476.3 s] 
+INFO:root:Load model from ../model/SLRCPlus/SLRCPlus__Automotive__0__lr=0.0005__l2=1e-05__emb_size=64.pt
+INFO:root:
+Test After Training: (HR@5:0.3171,NDCG@5:0.2190,HR@10:0.4695,NDCG@10:0.2688,HR@20:0.5732,NDCG@20:0.2953,HR@50:0.7317,NDCG@50:0.3268)
+INFO:root:
+--------------------------------------------- END: 2022-01-13 01:50:22 ---------------------------------------------
+INFO:root:Namespace(model_name='SLRCPlus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 04:50:48 ---------------------------------------------
+INFO:root:
+==============================
+ Arguments       | Values     
+==============================
+ batch_size      | 256       
+ dataset         | Automotive
+ dropout         | 0         
+ early_stop      | 10        
+ emb_size        | 64        
+ epoch           | 200       
+ eval_batch_size | 256       
+ gpu             | 0         
+ history_max     | 20        
+ include_attr    | 0         
+ l2              | 1e-05     
+ lr              | 0.0005    
+ num_neg         | 1         
+ num_workers     | 5         
+ optimizer       | Adam      
+ random_seed     | 0         
+ test_all        | 0         
+ time_scalar     | 8640000   
+ topk            | 5,10,20,50
+==============================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Automotive" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 2928, "# item": 1835, "# entry": 20145
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:"# relation": 3, "# triplet": 73433
+INFO:root:Save corpus to ../data/Automotive\KGReader.pkl
+INFO:root:#params: 337266
+INFO:root:SLRCPlus(
+  (u_embeddings): Embedding(2929, 64)
+  (i_embeddings): Embedding(1836, 64)
+  (user_bias): Embedding(2929, 1)
+  (item_bias): Embedding(1836, 1)
+  (alphas): Embedding(1836, 3)
+  (pis): Embedding(1836, 3)
+  (betas): Embedding(1836, 3)
+  (sigmas): Embedding(1836, 3)
+  (mus): Embedding(1836, 3)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6905 [7.7 s]    dev=(HR@5:0.2768,NDCG@5:0.2024) [7.7 s] *
+INFO:root:Epoch 2     loss=0.6835 [7.7 s]    dev=(HR@5:0.3462,NDCG@5:0.2543) [7.6 s] *
+INFO:root:Epoch 3     loss=0.6761 [7.6 s]    dev=(HR@5:0.3661,NDCG@5:0.2674) [7.6 s] *
+INFO:root:Epoch 4     loss=0.6683 [7.7 s]    dev=(HR@5:0.3723,NDCG@5:0.2714) [7.6 s] *
+INFO:root:Epoch 5     loss=0.6596 [7.7 s]    dev=(HR@5:0.3799,NDCG@5:0.2765) [7.6 s] *
+INFO:root:Epoch 6     loss=0.6495 [7.6 s]    dev=(HR@5:0.3813,NDCG@5:0.2791) [7.6 s] *
+INFO:root:Epoch 7     loss=0.6382 [7.6 s]    dev=(HR@5:0.3857,NDCG@5:0.2813) [7.6 s] *
+INFO:root:Epoch 8     loss=0.6251 [7.4 s]    dev=(HR@5:0.3886,NDCG@5:0.2841) [7.4 s] *
+INFO:root:Epoch 9     loss=0.6112 [7.5 s]    dev=(HR@5:0.3911,NDCG@5:0.2875) [7.6 s] *
+INFO:root:Epoch 10    loss=0.5951 [7.6 s]    dev=(HR@5:0.3911,NDCG@5:0.2905) [7.6 s] *
+INFO:root:Epoch 11    loss=0.5788 [7.5 s]    dev=(HR@5:0.3951,NDCG@5:0.2929) [7.6 s] *
+INFO:root:Epoch 12    loss=0.5619 [7.5 s]    dev=(HR@5:0.4009,NDCG@5:0.2955) [7.5 s] *
+INFO:root:Epoch 13    loss=0.5442 [7.5 s]    dev=(HR@5:0.4030,NDCG@5:0.2984) [7.5 s] *
+INFO:root:Epoch 14    loss=0.5260 [7.7 s]    dev=(HR@5:0.4045,NDCG@5:0.2999) [7.6 s] *
+INFO:root:Epoch 15    loss=0.5092 [7.5 s]    dev=(HR@5:0.4067,NDCG@5:0.3017) [7.6 s] *
+INFO:root:Epoch 16    loss=0.4912 [7.7 s]    dev=(HR@5:0.4077,NDCG@5:0.3020) [7.7 s] *
+INFO:root:Epoch 17    loss=0.4739 [7.5 s]    dev=(HR@5:0.4074,NDCG@5:0.3027) [7.6 s] *
+INFO:root:Epoch 18    loss=0.4563 [7.9 s]    dev=(HR@5:0.4088,NDCG@5:0.3033) [7.6 s] *
+INFO:root:Epoch 19    loss=0.4393 [7.5 s]    dev=(HR@5:0.4121,NDCG@5:0.3044) [7.5 s] *
+INFO:root:Epoch 20    loss=0.4232 [7.7 s]    dev=(HR@5:0.4135,NDCG@5:0.3058) [7.6 s] *
+INFO:root:Epoch 21    loss=0.4077 [7.7 s]    dev=(HR@5:0.4157,NDCG@5:0.3067) [7.6 s] *
+INFO:root:Epoch 22    loss=0.3937 [7.6 s]    dev=(HR@5:0.4150,NDCG@5:0.3061) [7.6 s]
+INFO:root:Epoch 23    loss=0.3765 [7.5 s]    dev=(HR@5:0.4124,NDCG@5:0.3051) [7.6 s]
+INFO:root:Epoch 24    loss=0.3640 [7.6 s]    dev=(HR@5:0.4121,NDCG@5:0.3055) [7.5 s]
+INFO:root:Epoch 25    loss=0.3518 [7.6 s]    dev=(HR@5:0.4114,NDCG@5:0.3049) [7.6 s]
+INFO:root:Epoch 26    loss=0.3373 [7.6 s]    dev=(HR@5:0.4143,NDCG@5:0.3059) [7.5 s]
+INFO:root:Epoch 27    loss=0.3252 [7.5 s]    dev=(HR@5:0.4121,NDCG@5:0.3050) [7.6 s]
+INFO:root:Epoch 28    loss=0.3133 [7.7 s]    dev=(HR@5:0.4128,NDCG@5:0.3058) [7.5 s]
+INFO:root:Epoch 29    loss=0.3009 [7.7 s]    dev=(HR@5:0.4124,NDCG@5:0.3056) [7.7 s]
+INFO:root:Epoch 30    loss=0.2905 [7.6 s]    dev=(HR@5:0.4117,NDCG@5:0.3053) [7.7 s]
+INFO:root:Epoch 31    loss=0.2791 [7.6 s]    dev=(HR@5:0.4114,NDCG@5:0.3050) [7.4 s]
+INFO:root:Epoch 32    loss=0.2699 [7.6 s]    dev=(HR@5:0.4092,NDCG@5:0.3046) [7.6 s]
+INFO:root:Epoch 33    loss=0.2616 [7.7 s]    dev=(HR@5:0.4092,NDCG@5:0.3052) [7.6 s]
+INFO:root:Epoch 34    loss=0.2510 [7.9 s]    dev=(HR@5:0.4099,NDCG@5:0.3056) [7.5 s]
+INFO:root:Epoch 35    loss=0.2421 [7.6 s]    dev=(HR@5:0.4114,NDCG@5:0.3057) [7.5 s]
+INFO:root:Epoch 36    loss=0.2333 [7.6 s]    dev=(HR@5:0.4114,NDCG@5:0.3058) [7.5 s]
+INFO:root:Epoch 37    loss=0.2269 [7.5 s]    dev=(HR@5:0.4124,NDCG@5:0.3067) [7.5 s]
+INFO:root:Epoch 38    loss=0.2195 [7.5 s]    dev=(HR@5:0.4106,NDCG@5:0.3053) [7.6 s]
+INFO:root:Epoch 39    loss=0.2100 [7.6 s]    dev=(HR@5:0.4088,NDCG@5:0.3040) [7.5 s]
+INFO:root:Epoch 40    loss=0.2034 [7.6 s]    dev=(HR@5:0.4099,NDCG@5:0.3040) [7.7 s]
+INFO:root:Epoch 41    loss=0.1970 [7.6 s]    dev=(HR@5:0.4077,NDCG@5:0.3031) [7.5 s]
+INFO:root:Early stop at 41 based on dev result.
+INFO:root:
+Best Iter(dev)=   21	 dev=(HR@5:0.4157,NDCG@5:0.3067) [622.5 s] 
+INFO:root:Load model from ../model/SLRCPlus/SLRCPlus__Automotive__0__lr=0.0005__l2=1e-05__emb_size=64.pt
+INFO:root:
+Test After Training: (HR@5:0.3636,NDCG@5:0.2640,HR@10:0.4740,NDCG@10:0.2999,HR@20:0.5774,NDCG@20:0.3259,HR@50:0.7464,NDCG@50:0.3593)
+INFO:root:
+--------------------------------------------- END: 2022-01-13 05:01:25 ---------------------------------------------

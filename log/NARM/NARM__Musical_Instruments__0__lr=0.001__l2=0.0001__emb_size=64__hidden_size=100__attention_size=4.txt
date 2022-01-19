@@ -1,0 +1,229 @@
+INFO:root:Namespace(model_name='NARM')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 16:23:51 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ attention_size  | 4                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ hidden_size     | 100                
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 7553
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 170868
+INFO:root:NARM(
+  (i_embeddings): Embedding(901, 64)
+  (encoder_g): GRU(64, 100, batch_first=True)
+  (encoder_l): GRU(64, 100, batch_first=True)
+  (A1): Linear(in_features=100, out_features=4, bias=False)
+  (A2): Linear(in_features=100, out_features=4, bias=False)
+  (attention_out): Linear(in_features=4, out_features=1, bias=False)
+  (out): Linear(in_features=200, out_features=64, bias=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6882 [11.1 s]    dev=(HR@5:0.2267,NDCG@5:0.1556) [9.1 s] *
+INFO:root:Epoch 2     loss=0.6271 [11.2 s]    dev=(HR@5:0.2133,NDCG@5:0.1472) [9.1 s]
+INFO:root:Epoch 3     loss=0.5792 [11.2 s]    dev=(HR@5:0.2000,NDCG@5:0.1320) [9.0 s]
+INFO:root:Epoch 4     loss=0.5624 [10.7 s]    dev=(HR@5:0.1867,NDCG@5:0.1395) [9.4 s]
+INFO:root:Epoch 5     loss=0.5569 [10.4 s]    dev=(HR@5:0.1867,NDCG@5:0.1324) [8.6 s]
+INFO:root:Epoch 6     loss=0.5556 [10.8 s]    dev=(HR@5:0.2267,NDCG@5:0.1488) [9.0 s]
+INFO:root:Epoch 7     loss=0.5571 [10.3 s]    dev=(HR@5:0.2400,NDCG@5:0.1483) [9.2 s]
+INFO:root:Epoch 8     loss=0.5552 [10.5 s]    dev=(HR@5:0.1867,NDCG@5:0.1320) [8.8 s]
+INFO:root:Epoch 9     loss=0.5510 [11.0 s]    dev=(HR@5:0.2400,NDCG@5:0.1532) [8.6 s]
+INFO:root:Epoch 10    loss=0.5432 [11.2 s]    dev=(HR@5:0.2267,NDCG@5:0.1488) [8.3 s]
+INFO:root:Epoch 11    loss=0.5521 [10.6 s]    dev=(HR@5:0.2267,NDCG@5:0.1525) [8.4 s]
+INFO:root:Epoch 12    loss=0.5441 [10.7 s]    dev=(HR@5:0.2400,NDCG@5:0.1577) [8.6 s] *
+INFO:root:Epoch 13    loss=0.5526 [83.0 s]    dev=(HR@5:0.2133,NDCG@5:0.1476) [8.3 s]
+INFO:root:Epoch 14    loss=0.5451 [9.2 s]    dev=(HR@5:0.2133,NDCG@5:0.1505) [8.8 s]
+INFO:root:Epoch 15    loss=0.5479 [9.9 s]    dev=(HR@5:0.2133,NDCG@5:0.1511) [8.1 s]
+INFO:root:Epoch 16    loss=0.5370 [9.3 s]    dev=(HR@5:0.2000,NDCG@5:0.1413) [8.8 s]
+INFO:root:Epoch 17    loss=0.5329 [10.7 s]    dev=(HR@5:0.1867,NDCG@5:0.1256) [7.8 s]
+INFO:root:Epoch 18    loss=0.5274 [10.4 s]    dev=(HR@5:0.1600,NDCG@5:0.1144) [8.1 s]
+INFO:root:Epoch 19    loss=0.5168 [9.2 s]    dev=(HR@5:0.1200,NDCG@5:0.0793) [8.2 s]
+INFO:root:Epoch 20    loss=0.5219 [9.4 s]    dev=(HR@5:0.1333,NDCG@5:0.0839) [7.9 s]
+INFO:root:Epoch 21    loss=0.5060 [9.5 s]    dev=(HR@5:0.0933,NDCG@5:0.0660) [7.7 s]
+INFO:root:Epoch 22    loss=0.5007 [9.5 s]    dev=(HR@5:0.1067,NDCG@5:0.0771) [7.7 s]
+INFO:root:Epoch 23    loss=0.4919 [9.6 s]    dev=(HR@5:0.1200,NDCG@5:0.0808) [8.0 s]
+INFO:root:Epoch 24    loss=0.4910 [9.1 s]    dev=(HR@5:0.1200,NDCG@5:0.0869) [7.9 s]
+INFO:root:Epoch 25    loss=0.4819 [9.5 s]    dev=(HR@5:0.0933,NDCG@5:0.0654) [7.3 s]
+INFO:root:Epoch 26    loss=0.4789 [10.0 s]    dev=(HR@5:0.1600,NDCG@5:0.1109) [7.8 s]
+INFO:root:Epoch 27    loss=0.4747 [9.9 s]    dev=(HR@5:0.1200,NDCG@5:0.0813) [8.0 s]
+INFO:root:Epoch 28    loss=0.4712 [1952.3 s]    dev=(HR@5:0.1200,NDCG@5:0.0910) [9.3 s]
+INFO:root:Epoch 29    loss=0.4711 [12.8 s]    dev=(HR@5:0.1200,NDCG@5:0.0926) [9.2 s]
+INFO:root:Epoch 30    loss=0.4670 [14.4 s]    dev=(HR@5:0.1600,NDCG@5:0.1065) [9.3 s]
+INFO:root:Epoch 31    loss=0.4612 [13.6 s]    dev=(HR@5:0.1867,NDCG@5:0.1197) [17383.8 s]
+INFO:root:Epoch 32    loss=0.4516 [10.0 s]    dev=(HR@5:0.1600,NDCG@5:0.1065) [7.2 s]
+INFO:root:Early stop at 32 based on dev result.
+INFO:root:
+Best Iter(dev)=   12	 dev=(HR@5:0.2400,NDCG@5:0.1577) [19996.6 s] 
+INFO:root:Load model from ../model/NARM/NARM__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__hidden_size=100__attention_size=4.pt
+INFO:root:
+Test After Training: (HR@5:0.1867,NDCG@5:0.1155,HR@10:0.2533,NDCG@10:0.1363,HR@20:0.3067,NDCG@20:0.1498,HR@50:0.5733,NDCG@50:0.2017)
+INFO:root:
+--------------------------------------------- END: 2022-01-12 21:57:18 ---------------------------------------------
+INFO:root:Namespace(model_name='NARM')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 23:09:51 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ attention_size  | 4                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ hidden_size     | 100                
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 10111
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 170868
+INFO:root:NARM(
+  (i_embeddings): Embedding(901, 64)
+  (encoder_g): GRU(64, 100, batch_first=True)
+  (encoder_l): GRU(64, 100, batch_first=True)
+  (A1): Linear(in_features=100, out_features=4, bias=False)
+  (A2): Linear(in_features=100, out_features=4, bias=False)
+  (attention_out): Linear(in_features=4, out_features=1, bias=False)
+  (out): Linear(in_features=200, out_features=64, bias=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6882 [10.0 s]    dev=(HR@5:0.2105,NDCG@5:0.1454) [8.2 s] *
+INFO:root:Epoch 2     loss=0.6271 [9.9 s]    dev=(HR@5:0.2208,NDCG@5:0.1489) [8.1 s] *
+INFO:root:Epoch 3     loss=0.5792 [10.1 s]    dev=(HR@5:0.2127,NDCG@5:0.1423) [7.8 s]
+INFO:root:Epoch 4     loss=0.5624 [9.2 s]    dev=(HR@5:0.2075,NDCG@5:0.1415) [7.7 s]
+INFO:root:Epoch 5     loss=0.5569 [9.1 s]    dev=(HR@5:0.2142,NDCG@5:0.1434) [7.7 s]
+INFO:root:Epoch 6     loss=0.5556 [9.3 s]    dev=(HR@5:0.2164,NDCG@5:0.1442) [7.6 s]
+INFO:root:Epoch 7     loss=0.5571 [9.6 s]    dev=(HR@5:0.2216,NDCG@5:0.1467) [8.3 s]
+INFO:root:Epoch 8     loss=0.5552 [9.2 s]    dev=(HR@5:0.2230,NDCG@5:0.1472) [7.8 s]
+INFO:root:Epoch 9     loss=0.5510 [9.7 s]    dev=(HR@5:0.2230,NDCG@5:0.1468) [7.9 s]
+INFO:root:Epoch 10    loss=0.5432 [9.3 s]    dev=(HR@5:0.2238,NDCG@5:0.1477) [7.8 s]
+INFO:root:Epoch 11    loss=0.5521 [9.5 s]    dev=(HR@5:0.2253,NDCG@5:0.1502) [7.6 s] *
+INFO:root:Epoch 12    loss=0.5441 [9.5 s]    dev=(HR@5:0.2208,NDCG@5:0.1480) [7.5 s]
+INFO:root:Epoch 13    loss=0.5526 [9.2 s]    dev=(HR@5:0.2157,NDCG@5:0.1433) [7.8 s]
+INFO:root:Epoch 14    loss=0.5451 [9.6 s]    dev=(HR@5:0.2208,NDCG@5:0.1457) [8.7 s]
+INFO:root:Epoch 15    loss=0.5479 [11.4 s]    dev=(HR@5:0.2238,NDCG@5:0.1470) [134.7 s]
+INFO:root:Epoch 16    loss=0.5370 [9.4 s]    dev=(HR@5:0.2186,NDCG@5:0.1438) [8.2 s]
+INFO:root:Epoch 17    loss=0.5329 [9.6 s]    dev=(HR@5:0.2216,NDCG@5:0.1476) [8.4 s]
+INFO:root:Epoch 18    loss=0.5274 [9.7 s]    dev=(HR@5:0.2179,NDCG@5:0.1463) [7.9 s]
+INFO:root:Epoch 19    loss=0.5168 [10.4 s]    dev=(HR@5:0.2134,NDCG@5:0.1432) [8.6 s]
+INFO:root:Epoch 20    loss=0.5219 [9.8 s]    dev=(HR@5:0.2142,NDCG@5:0.1429) [8.0 s]
+INFO:root:Epoch 21    loss=0.5060 [10.3 s]    dev=(HR@5:0.2186,NDCG@5:0.1477) [8.8 s]
+INFO:root:Epoch 22    loss=0.5007 [10.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1448) [8.9 s]
+INFO:root:Epoch 23    loss=0.4919 [9.8 s]    dev=(HR@5:0.2179,NDCG@5:0.1484) [8.0 s]
+INFO:root:Epoch 24    loss=0.4910 [9.5 s]    dev=(HR@5:0.2201,NDCG@5:0.1498) [8.2 s]
+INFO:root:Epoch 25    loss=0.4819 [9.7 s]    dev=(HR@5:0.2223,NDCG@5:0.1496) [8.7 s]
+INFO:root:Epoch 26    loss=0.4789 [10.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1476) [8.8 s]
+INFO:root:Epoch 27    loss=0.4747 [10.8 s]    dev=(HR@5:0.2134,NDCG@5:0.1455) [8.9 s]
+INFO:root:Epoch 28    loss=0.4712 [11.2 s]    dev=(HR@5:0.2201,NDCG@5:0.1480) [8.7 s]
+INFO:root:Epoch 29    loss=0.4711 [758.7 s]    dev=(HR@5:0.2194,NDCG@5:0.1477) [9.3 s]
+INFO:root:Epoch 30    loss=0.4670 [9.9 s]    dev=(HR@5:0.2223,NDCG@5:0.1506) [7.3 s] *
+INFO:root:Epoch 31    loss=0.4612 [10.9 s]    dev=(HR@5:0.2179,NDCG@5:0.1499) [7.6 s]
+INFO:root:Epoch 32    loss=0.4516 [8.9 s]    dev=(HR@5:0.2134,NDCG@5:0.1486) [7.1 s]
+INFO:root:Epoch 33    loss=0.4663 [9.9 s]    dev=(HR@5:0.2112,NDCG@5:0.1439) [7.3 s]
+INFO:root:Epoch 34    loss=0.4514 [8.5 s]    dev=(HR@5:0.2171,NDCG@5:0.1508) [7.6 s] *
+INFO:root:Epoch 35    loss=0.4559 [9.8 s]    dev=(HR@5:0.2097,NDCG@5:0.1448) [7.5 s]
+INFO:root:Epoch 36    loss=0.4387 [8.8 s]    dev=(HR@5:0.2134,NDCG@5:0.1439) [7.1 s]
+INFO:root:Epoch 37    loss=0.4422 [8.8 s]    dev=(HR@5:0.2134,NDCG@5:0.1483) [6.9 s]
+INFO:root:Epoch 38    loss=0.4327 [8.3 s]    dev=(HR@5:0.2134,NDCG@5:0.1483) [6.9 s]
+INFO:root:Epoch 39    loss=0.4186 [8.5 s]    dev=(HR@5:0.2112,NDCG@5:0.1452) [6.9 s]
+INFO:root:Epoch 40    loss=0.4159 [8.6 s]    dev=(HR@5:0.2134,NDCG@5:0.1469) [6.9 s]
+INFO:root:Epoch 41    loss=0.4151 [8.4 s]    dev=(HR@5:0.2194,NDCG@5:0.1502) [6.9 s]
+INFO:root:Epoch 42    loss=0.4070 [8.4 s]    dev=(HR@5:0.2201,NDCG@5:0.1506) [6.9 s]
+INFO:root:Epoch 43    loss=0.4082 [8.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1502) [7.2 s]
+INFO:root:Epoch 44    loss=0.3972 [8.4 s]    dev=(HR@5:0.2083,NDCG@5:0.1465) [6.8 s]
+INFO:root:Epoch 45    loss=0.4031 [8.6 s]    dev=(HR@5:0.2046,NDCG@5:0.1445) [6.9 s]
+INFO:root:Epoch 46    loss=0.4011 [8.3 s]    dev=(HR@5:0.1987,NDCG@5:0.1394) [7.1 s]
+INFO:root:Epoch 47    loss=0.3862 [8.4 s]    dev=(HR@5:0.2105,NDCG@5:0.1477) [6.9 s]
+INFO:root:Epoch 48    loss=0.3814 [8.5 s]    dev=(HR@5:0.2112,NDCG@5:0.1483) [6.9 s]
+INFO:root:Epoch 49    loss=0.3844 [8.4 s]    dev=(HR@5:0.2164,NDCG@5:0.1487) [7.0 s]
+INFO:root:Epoch 50    loss=0.3797 [8.3 s]    dev=(HR@5:0.2112,NDCG@5:0.1469) [6.9 s]
+INFO:root:Epoch 51    loss=0.3820 [8.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1475) [7.0 s]
+INFO:root:Epoch 52    loss=0.3851 [8.4 s]    dev=(HR@5:0.2016,NDCG@5:0.1430) [7.0 s]
+INFO:root:Epoch 53    loss=0.3763 [8.4 s]    dev=(HR@5:0.2024,NDCG@5:0.1381) [6.9 s]
+INFO:root:Epoch 54    loss=0.3706 [8.4 s]    dev=(HR@5:0.2127,NDCG@5:0.1459) [7.0 s]
+INFO:root:Early stop at 54 based on dev result.
+INFO:root:
+Best Iter(dev)=   34	 dev=(HR@5:0.2171,NDCG@5:0.1508) [1793.8 s] 
+INFO:root:Load model from ../model/NARM/NARM__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__hidden_size=100__attention_size=4.pt
+INFO:root:
+Test After Training: (HR@5:0.1773,NDCG@5:0.1223,HR@10:0.2659,NDCG@10:0.1509,HR@20:0.3678,NDCG@20:0.1762,HR@50:0.6470,NDCG@50:0.2309)
+INFO:root:
+--------------------------------------------- END: 2022-01-12 23:39:53 ---------------------------------------------
+INFO:root:Namespace(model_name='NARM')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 00:11:00 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ attention_size  | 4                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ hidden_size     | 100                
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 170868
+INFO:root:NARM(
+  (i_embeddings): Embedding(901, 64)
+  (encoder_g): GRU(64, 100, batch_first=True)
+  (encoder_l): GRU(64, 100, batch_first=True)
+  (A1): Linear(in_features=100, out_features=4, bias=False)
+  (A2): Linear(in_features=100, out_features=4, bias=False)
+  (attention_out): Linear(in_features=4, out_features=1, bias=False)
+  (out): Linear(in_features=200, out_features=64, bias=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6882 [9.1 s]    dev=(HR@5:0.2105,NDCG@5:0.1454) [6.9 s] *
+INFO:root:Epoch 2     loss=0.6271 [8.4 s]    dev=(HR@5:0.2208,NDCG@5:0.1489) [6.9 s] *

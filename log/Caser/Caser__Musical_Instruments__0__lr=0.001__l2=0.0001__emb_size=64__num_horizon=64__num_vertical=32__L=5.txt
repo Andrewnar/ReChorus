@@ -1,0 +1,263 @@
+INFO:root:Namespace(model_name='Caser')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 21:59:41 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ L               | 5                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_horizon     | 64                 
+ num_neg         | 1                  
+ num_vertical    | 32                 
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 371488
+INFO:root:Caser(
+  (u_embeddings): Embedding(1430, 64)
+  (i_embeddings): Embedding(901, 64, padding_idx=0)
+  (conv_h): ModuleList(
+    (0): Conv2d(1, 64, kernel_size=(1, 64), stride=(1, 1))
+    (1): Conv2d(1, 64, kernel_size=(2, 64), stride=(1, 1))
+    (2): Conv2d(1, 64, kernel_size=(3, 64), stride=(1, 1))
+    (3): Conv2d(1, 64, kernel_size=(4, 64), stride=(1, 1))
+    (4): Conv2d(1, 64, kernel_size=(5, 64), stride=(1, 1))
+  )
+  (conv_v): Conv2d(1, 32, kernel_size=(20, 1), stride=(1, 1))
+  (fc): Linear(in_features=2368, out_features=64, bias=True)
+  (out): Linear(in_features=128, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Namespace(model_name='Caser')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 22:00:05 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ L               | 5                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_horizon     | 64                 
+ num_neg         | 1                  
+ num_vertical    | 32                 
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 7553
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 371488
+INFO:root:Caser(
+  (u_embeddings): Embedding(1430, 64)
+  (i_embeddings): Embedding(901, 64, padding_idx=0)
+  (conv_h): ModuleList(
+    (0): Conv2d(1, 64, kernel_size=(1, 64), stride=(1, 1))
+    (1): Conv2d(1, 64, kernel_size=(2, 64), stride=(1, 1))
+    (2): Conv2d(1, 64, kernel_size=(3, 64), stride=(1, 1))
+    (3): Conv2d(1, 64, kernel_size=(4, 64), stride=(1, 1))
+    (4): Conv2d(1, 64, kernel_size=(5, 64), stride=(1, 1))
+  )
+  (conv_v): Conv2d(1, 32, kernel_size=(20, 1), stride=(1, 1))
+  (fc): Linear(in_features=2368, out_features=64, bias=True)
+  (out): Linear(in_features=128, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6619 [11.2 s]    dev=(HR@5:0.1867,NDCG@5:0.1401) [7.5 s] *
+INFO:root:Epoch 2     loss=0.5808 [10.8 s]    dev=(HR@5:0.1867,NDCG@5:0.1276) [8.6 s]
+INFO:root:Epoch 3     loss=0.5709 [9.8 s]    dev=(HR@5:0.2000,NDCG@5:0.1412) [7.9 s] *
+INFO:root:Epoch 4     loss=0.5593 [10.5 s]    dev=(HR@5:0.2000,NDCG@5:0.1454) [8.3 s] *
+INFO:root:Epoch 5     loss=0.5552 [9.4 s]    dev=(HR@5:0.2000,NDCG@5:0.1284) [6.7 s]
+INFO:root:Epoch 6     loss=0.5468 [8.7 s]    dev=(HR@5:0.2000,NDCG@5:0.1285) [6.8 s]
+INFO:root:Epoch 7     loss=0.5457 [8.6 s]    dev=(HR@5:0.2267,NDCG@5:0.1472) [6.5 s] *
+INFO:root:Epoch 8     loss=0.5413 [8.6 s]    dev=(HR@5:0.2000,NDCG@5:0.1333) [6.5 s]
+INFO:root:Epoch 9     loss=0.5316 [8.1 s]    dev=(HR@5:0.2133,NDCG@5:0.1441) [6.4 s]
+INFO:root:Epoch 10    loss=0.5138 [8.3 s]    dev=(HR@5:0.2533,NDCG@5:0.1626) [6.6 s] *
+INFO:root:Epoch 11    loss=0.5099 [8.5 s]    dev=(HR@5:0.2267,NDCG@5:0.1599) [6.6 s]
+INFO:root:Epoch 12    loss=0.5058 [8.1 s]    dev=(HR@5:0.2000,NDCG@5:0.1402) [6.6 s]
+INFO:root:Epoch 13    loss=0.5046 [8.1 s]    dev=(HR@5:0.2000,NDCG@5:0.1360) [6.5 s]
+INFO:root:Epoch 14    loss=0.4918 [8.2 s]    dev=(HR@5:0.2133,NDCG@5:0.1445) [7.3 s]
+INFO:root:Epoch 15    loss=0.4846 [9.0 s]    dev=(HR@5:0.2267,NDCG@5:0.1569) [7.4 s]
+INFO:root:Epoch 16    loss=0.4766 [9.0 s]    dev=(HR@5:0.2133,NDCG@5:0.1526) [6.7 s]
+INFO:root:Epoch 17    loss=0.4736 [8.4 s]    dev=(HR@5:0.2267,NDCG@5:0.1519) [6.4 s]
+INFO:root:Epoch 18    loss=0.4623 [8.2 s]    dev=(HR@5:0.2267,NDCG@5:0.1454) [6.4 s]
+INFO:root:Epoch 19    loss=0.4567 [8.2 s]    dev=(HR@5:0.2267,NDCG@5:0.1528) [6.4 s]
+INFO:root:Epoch 20    loss=0.4591 [8.3 s]    dev=(HR@5:0.2267,NDCG@5:0.1520) [6.4 s]
+INFO:root:Epoch 21    loss=0.4489 [8.3 s]    dev=(HR@5:0.2000,NDCG@5:0.1297) [6.5 s]
+INFO:root:Epoch 22    loss=0.4427 [8.4 s]    dev=(HR@5:0.2000,NDCG@5:0.1352) [6.4 s]
+INFO:root:Epoch 23    loss=0.4317 [8.3 s]    dev=(HR@5:0.1733,NDCG@5:0.1190) [6.4 s]
+INFO:root:Epoch 24    loss=0.4431 [8.2 s]    dev=(HR@5:0.2000,NDCG@5:0.1227) [6.6 s]
+INFO:root:Epoch 25    loss=0.4431 [8.2 s]    dev=(HR@5:0.2133,NDCG@5:0.1268) [6.4 s]
+INFO:root:Epoch 26    loss=0.4263 [8.3 s]    dev=(HR@5:0.1867,NDCG@5:0.1186) [6.4 s]
+INFO:root:Epoch 27    loss=0.4191 [8.2 s]    dev=(HR@5:0.1867,NDCG@5:0.1137) [6.4 s]
+INFO:root:Epoch 28    loss=0.4288 [8.3 s]    dev=(HR@5:0.2000,NDCG@5:0.1241) [6.3 s]
+INFO:root:Epoch 29    loss=0.4206 [8.3 s]    dev=(HR@5:0.2000,NDCG@5:0.1330) [6.7 s]
+INFO:root:Epoch 30    loss=0.4234 [8.1 s]    dev=(HR@5:0.2000,NDCG@5:0.1308) [6.4 s]
+INFO:root:Early stop at 30 based on dev result.
+INFO:root:
+Best Iter(dev)=   10	 dev=(HR@5:0.2533,NDCG@5:0.1626) [463.9 s] 
+INFO:root:Load model from ../model/Caser/Caser__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__num_horizon=64__num_vertical=32__L=5.pt
+INFO:root:
+Test After Training: (HR@5:0.1867,NDCG@5:0.1160,HR@10:0.2267,NDCG@10:0.1287,HR@20:0.3200,NDCG@20:0.1518,HR@50:0.5733,NDCG@50:0.2010)
+INFO:root:
+--------------------------------------------- END: 2022-01-12 22:07:56 ---------------------------------------------
+INFO:root:Namespace(model_name='Caser')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 22:12:00 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ L               | 5                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_horizon     | 64                 
+ num_neg         | 1                  
+ num_vertical    | 32                 
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 371488
+INFO:root:Caser(
+  (u_embeddings): Embedding(1430, 64)
+  (i_embeddings): Embedding(901, 64, padding_idx=0)
+  (conv_h): ModuleList(
+    (0): Conv2d(1, 64, kernel_size=(1, 64), stride=(1, 1))
+    (1): Conv2d(1, 64, kernel_size=(2, 64), stride=(1, 1))
+    (2): Conv2d(1, 64, kernel_size=(3, 64), stride=(1, 1))
+    (3): Conv2d(1, 64, kernel_size=(4, 64), stride=(1, 1))
+    (4): Conv2d(1, 64, kernel_size=(5, 64), stride=(1, 1))
+  )
+  (conv_v): Conv2d(1, 32, kernel_size=(20, 1), stride=(1, 1))
+  (fc): Linear(in_features=2368, out_features=64, bias=True)
+  (out): Linear(in_features=128, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6619 [8.5 s]    dev=(HR@5:0.1867,NDCG@5:0.1401) [6.7 s] *
+INFO:root:Namespace(model_name='Caser')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-12 22:55:24 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ L               | 5                  
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_horizon     | 64                 
+ num_neg         | 1                  
+ num_vertical    | 32                 
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 10111
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 371488
+INFO:root:Caser(
+  (u_embeddings): Embedding(1430, 64)
+  (i_embeddings): Embedding(901, 64, padding_idx=0)
+  (conv_h): ModuleList(
+    (0): Conv2d(1, 64, kernel_size=(1, 64), stride=(1, 1))
+    (1): Conv2d(1, 64, kernel_size=(2, 64), stride=(1, 1))
+    (2): Conv2d(1, 64, kernel_size=(3, 64), stride=(1, 1))
+    (3): Conv2d(1, 64, kernel_size=(4, 64), stride=(1, 1))
+    (4): Conv2d(1, 64, kernel_size=(5, 64), stride=(1, 1))
+  )
+  (conv_v): Conv2d(1, 32, kernel_size=(20, 1), stride=(1, 1))
+  (fc): Linear(in_features=2368, out_features=64, bias=True)
+  (out): Linear(in_features=128, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6619 [10.8 s]    dev=(HR@5:0.2038,NDCG@5:0.1396) [9.6 s] *
+INFO:root:Epoch 2     loss=0.5808 [9.7 s]    dev=(HR@5:0.2031,NDCG@5:0.1401) [7.8 s] *
+INFO:root:Epoch 3     loss=0.5709 [9.3 s]    dev=(HR@5:0.2120,NDCG@5:0.1452) [8.0 s] *
+INFO:root:Epoch 4     loss=0.5593 [9.3 s]    dev=(HR@5:0.2105,NDCG@5:0.1444) [8.5 s]
+INFO:root:Epoch 5     loss=0.5552 [10.0 s]    dev=(HR@5:0.2127,NDCG@5:0.1450) [8.3 s]
+INFO:root:Epoch 6     loss=0.5468 [9.6 s]    dev=(HR@5:0.2127,NDCG@5:0.1482) [8.1 s] *
+INFO:root:Epoch 7     loss=0.5457 [9.7 s]    dev=(HR@5:0.2201,NDCG@5:0.1499) [8.3 s] *
+INFO:root:Epoch 8     loss=0.5413 [9.6 s]    dev=(HR@5:0.2230,NDCG@5:0.1507) [8.3 s] *
+INFO:root:Epoch 9     loss=0.5316 [9.6 s]    dev=(HR@5:0.2164,NDCG@5:0.1482) [8.5 s]
+INFO:root:Epoch 10    loss=0.5138 [9.7 s]    dev=(HR@5:0.2245,NDCG@5:0.1494) [8.3 s]
+INFO:root:Epoch 11    loss=0.5099 [9.6 s]    dev=(HR@5:0.2194,NDCG@5:0.1491) [8.4 s]
+INFO:root:Epoch 12    loss=0.5058 [9.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1464) [8.2 s]
+INFO:root:Epoch 13    loss=0.5046 [9.7 s]    dev=(HR@5:0.2149,NDCG@5:0.1423) [7.7 s]
+INFO:root:Epoch 14    loss=0.4918 [9.4 s]    dev=(HR@5:0.2075,NDCG@5:0.1393) [8.0 s]
+INFO:root:Epoch 15    loss=0.4846 [9.8 s]    dev=(HR@5:0.2105,NDCG@5:0.1373) [7.8 s]
+INFO:root:Epoch 16    loss=0.4766 [9.6 s]    dev=(HR@5:0.2009,NDCG@5:0.1367) [8.1 s]
+INFO:root:Epoch 17    loss=0.4736 [9.6 s]    dev=(HR@5:0.2068,NDCG@5:0.1412) [8.4 s]
+INFO:root:Epoch 18    loss=0.4623 [9.7 s]    dev=(HR@5:0.2031,NDCG@5:0.1391) [8.1 s]
+INFO:root:Epoch 19    loss=0.4567 [9.5 s]    dev=(HR@5:0.2105,NDCG@5:0.1359) [8.5 s]
+INFO:root:Epoch 20    loss=0.4591 [9.5 s]    dev=(HR@5:0.2024,NDCG@5:0.1322) [8.1 s]
+INFO:root:Epoch 21    loss=0.4489 [9.7 s]    dev=(HR@5:0.2112,NDCG@5:0.1387) [8.4 s]
+INFO:root:Epoch 22    loss=0.4427 [9.1 s]    dev=(HR@5:0.2038,NDCG@5:0.1382) [8.2 s]
+INFO:root:Epoch 23    loss=0.4317 [9.6 s]    dev=(HR@5:0.2090,NDCG@5:0.1396) [8.3 s]
+INFO:root:Epoch 24    loss=0.4431 [9.3 s]    dev=(HR@5:0.2053,NDCG@5:0.1374) [8.0 s]
+INFO:root:Epoch 25    loss=0.4431 [9.6 s]    dev=(HR@5:0.2038,NDCG@5:0.1384) [8.2 s]
+INFO:root:Epoch 26    loss=0.4263 [9.8 s]    dev=(HR@5:0.2016,NDCG@5:0.1390) [8.4 s]
+INFO:root:Epoch 27    loss=0.4191 [9.8 s]    dev=(HR@5:0.1935,NDCG@5:0.1362) [8.0 s]
+INFO:root:Epoch 28    loss=0.4288 [9.7 s]    dev=(HR@5:0.2068,NDCG@5:0.1448) [8.2 s]
+INFO:root:Early stop at 28 based on dev result.
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@5:0.2230,NDCG@5:0.1507) [500.2 s] 
+INFO:root:Load model from ../model/Caser/Caser__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__num_horizon=64__num_vertical=32__L=5.pt
+INFO:root:
+Test After Training: (HR@5:0.1839,NDCG@5:0.1276,HR@10:0.2629,NDCG@10:0.1528,HR@20:0.3752,NDCG@20:0.1810,HR@50:0.6233,NDCG@50:0.2297)
+INFO:root:
+--------------------------------------------- END: 2022-01-12 23:03:53 ---------------------------------------------

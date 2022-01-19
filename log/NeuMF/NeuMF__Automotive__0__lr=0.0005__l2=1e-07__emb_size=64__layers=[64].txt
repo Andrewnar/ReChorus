@@ -1,0 +1,103 @@
+INFO:root:Namespace(model_name='NeuMF')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 00:28:48 ---------------------------------------------
+INFO:root:
+==============================
+ Arguments       | Values     
+==============================
+ batch_size      | 256       
+ dataset         | Automotive
+ dropout         | 0.2       
+ early_stop      | 10        
+ emb_size        | 64        
+ epoch           | 200       
+ eval_batch_size | 256       
+ gpu             | 0         
+ l2              | 1e-07     
+ layers          | [64]      
+ lr              | 0.0005    
+ num_neg         | 1         
+ num_workers     | 5         
+ optimizer       | Adam      
+ random_seed     | 0         
+ test_all        | 0         
+ topk            | 5,10,20,50
+==============================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Automotive\BaseReader.pkl
+INFO:root:#params: 618304
+INFO:root:NeuMF(
+  (mf_u_embeddings): Embedding(2929, 64)
+  (mf_i_embeddings): Embedding(1836, 64)
+  (mlp_u_embeddings): Embedding(2929, 64)
+  (mlp_i_embeddings): Embedding(1836, 64)
+  (mlp): ModuleList(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (dropout_layer): Dropout(p=0.2, inplace=False)
+  (prediction): Linear(in_features=128, out_features=1, bias=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6924 [7.0 s]    dev=(HR@5:0.1524,NDCG@5:0.0990) [5.8 s] *
+INFO:root:Epoch 2     loss=0.6682 [6.9 s]    dev=(HR@5:0.1585,NDCG@5:0.1074) [5.7 s] *
+INFO:root:Epoch 3     loss=0.5945 [6.0 s]    dev=(HR@5:0.1768,NDCG@5:0.1041) [5.9 s]
+INFO:root:Epoch 4     loss=0.5617 [5.8 s]    dev=(HR@5:0.1646,NDCG@5:0.1042) [5.4 s]
+INFO:root:Epoch 5     loss=0.5526 [5.7 s]    dev=(HR@5:0.1646,NDCG@5:0.1075) [5.7 s] *
+INFO:root:Epoch 6     loss=0.5461 [5.6 s]    dev=(HR@5:0.1646,NDCG@5:0.1046) [5.3 s]
+INFO:root:Epoch 7     loss=0.5355 [5.7 s]    dev=(HR@5:0.1707,NDCG@5:0.1052) [5.4 s]
+INFO:root:Epoch 8     loss=0.5253 [5.8 s]    dev=(HR@5:0.1585,NDCG@5:0.1000) [5.9 s]
+INFO:root:Epoch 9     loss=0.5194 [6.1 s]    dev=(HR@5:0.1646,NDCG@5:0.1062) [5.7 s]
+INFO:root:Epoch 10    loss=0.5027 [6.1 s]    dev=(HR@5:0.1646,NDCG@5:0.1040) [5.9 s]
+INFO:root:Epoch 11    loss=0.4894 [6.0 s]    dev=(HR@5:0.1524,NDCG@5:0.1018) [5.6 s]
+INFO:root:Epoch 12    loss=0.4714 [5.8 s]    dev=(HR@5:0.1585,NDCG@5:0.1045) [5.4 s]
+INFO:root:Epoch 13    loss=0.4635 [5.6 s]    dev=(HR@5:0.1707,NDCG@5:0.1067) [5.4 s]
+INFO:root:Epoch 14    loss=0.4448 [5.5 s]    dev=(HR@5:0.1646,NDCG@5:0.1127) [5.3 s] *
+INFO:root:Epoch 15    loss=0.4290 [6.0 s]    dev=(HR@5:0.1646,NDCG@5:0.1149) [5.6 s] *
+INFO:root:Epoch 16    loss=0.4026 [6.0 s]    dev=(HR@5:0.1890,NDCG@5:0.1225) [5.7 s] *
+INFO:root:Epoch 17    loss=0.3808 [6.1 s]    dev=(HR@5:0.1890,NDCG@5:0.1325) [5.7 s] *
+INFO:root:Epoch 18    loss=0.3594 [5.9 s]    dev=(HR@5:0.1829,NDCG@5:0.1279) [5.5 s]
+INFO:root:Epoch 19    loss=0.3356 [5.7 s]    dev=(HR@5:0.1829,NDCG@5:0.1308) [5.3 s]
+INFO:root:Epoch 20    loss=0.3117 [5.6 s]    dev=(HR@5:0.1890,NDCG@5:0.1358) [5.3 s] *
+INFO:root:Epoch 21    loss=0.2926 [5.6 s]    dev=(HR@5:0.2195,NDCG@5:0.1493) [5.3 s] *
+INFO:root:Epoch 22    loss=0.2724 [5.7 s]    dev=(HR@5:0.2195,NDCG@5:0.1518) [5.7 s] *
+INFO:root:Epoch 23    loss=0.2509 [6.1 s]    dev=(HR@5:0.2256,NDCG@5:0.1517) [5.8 s]
+INFO:root:Epoch 24    loss=0.2304 [6.0 s]    dev=(HR@5:0.2256,NDCG@5:0.1545) [5.8 s] *
+INFO:root:Epoch 25    loss=0.2169 [5.9 s]    dev=(HR@5:0.2256,NDCG@5:0.1539) [5.5 s]
+INFO:root:Epoch 26    loss=0.1990 [5.8 s]    dev=(HR@5:0.2317,NDCG@5:0.1557) [5.5 s] *
+INFO:root:Epoch 27    loss=0.1830 [5.6 s]    dev=(HR@5:0.2378,NDCG@5:0.1576) [5.2 s] *
+INFO:root:Epoch 28    loss=0.1680 [5.5 s]    dev=(HR@5:0.2256,NDCG@5:0.1550) [5.2 s]
+INFO:root:Epoch 29    loss=0.1556 [5.7 s]    dev=(HR@5:0.2317,NDCG@5:0.1631) [5.5 s] *
+INFO:root:Epoch 30    loss=0.1451 [6.0 s]    dev=(HR@5:0.2317,NDCG@5:0.1619) [5.8 s]
+INFO:root:Epoch 31    loss=0.1319 [6.1 s]    dev=(HR@5:0.2134,NDCG@5:0.1518) [5.9 s]
+INFO:root:Epoch 32    loss=0.1209 [6.4 s]    dev=(HR@5:0.2317,NDCG@5:0.1593) [5.6 s]
+INFO:root:Epoch 33    loss=0.1135 [6.0 s]    dev=(HR@5:0.2378,NDCG@5:0.1632) [5.5 s] *
+INFO:root:Epoch 34    loss=0.1034 [5.8 s]    dev=(HR@5:0.2378,NDCG@5:0.1610) [5.3 s]
+INFO:root:Epoch 35    loss=0.0985 [5.6 s]    dev=(HR@5:0.2439,NDCG@5:0.1623) [5.3 s]
+INFO:root:Epoch 36    loss=0.0901 [5.6 s]    dev=(HR@5:0.2500,NDCG@5:0.1672) [5.5 s] *
+INFO:root:Epoch 37    loss=0.0826 [6.0 s]    dev=(HR@5:0.2317,NDCG@5:0.1592) [5.7 s]
+INFO:root:Epoch 38    loss=0.0776 [6.1 s]    dev=(HR@5:0.2378,NDCG@5:0.1634) [5.8 s]
+INFO:root:Epoch 39    loss=0.0715 [6.2 s]    dev=(HR@5:0.2317,NDCG@5:0.1592) [5.8 s]
+INFO:root:Epoch 40    loss=0.0673 [5.9 s]    dev=(HR@5:0.2256,NDCG@5:0.1591) [5.5 s]
+INFO:root:Epoch 41    loss=0.0641 [5.7 s]    dev=(HR@5:0.2256,NDCG@5:0.1554) [5.3 s]
+INFO:root:Epoch 42    loss=0.0595 [5.7 s]    dev=(HR@5:0.2256,NDCG@5:0.1512) [5.3 s]
+INFO:root:Epoch 43    loss=0.0563 [5.6 s]    dev=(HR@5:0.2195,NDCG@5:0.1500) [5.4 s]
+INFO:root:Epoch 44    loss=0.0524 [5.8 s]    dev=(HR@5:0.2195,NDCG@5:0.1490) [5.8 s]
+INFO:root:Epoch 45    loss=0.0501 [6.2 s]    dev=(HR@5:0.2134,NDCG@5:0.1480) [5.8 s]
+INFO:root:Epoch 46    loss=0.0477 [6.2 s]    dev=(HR@5:0.2195,NDCG@5:0.1451) [5.8 s]
+INFO:root:Epoch 47    loss=0.0445 [6.0 s]    dev=(HR@5:0.2195,NDCG@5:0.1478) [5.5 s]
+INFO:root:Epoch 48    loss=0.0415 [5.7 s]    dev=(HR@5:0.2012,NDCG@5:0.1381) [5.3 s]
+INFO:root:Epoch 49    loss=0.0389 [5.5 s]    dev=(HR@5:0.2317,NDCG@5:0.1491) [5.2 s]
+INFO:root:Epoch 50    loss=0.0372 [5.6 s]    dev=(HR@5:0.2195,NDCG@5:0.1429) [5.4 s]
+INFO:root:Epoch 51    loss=0.0350 [5.8 s]    dev=(HR@5:0.2073,NDCG@5:0.1383) [5.7 s]
+INFO:root:Epoch 52    loss=0.0324 [6.1 s]    dev=(HR@5:0.2073,NDCG@5:0.1352) [5.9 s]
+INFO:root:Epoch 53    loss=0.0323 [5.8 s]    dev=(HR@5:0.1951,NDCG@5:0.1334) [5.5 s]
+INFO:root:Epoch 54    loss=0.0304 [6.2 s]    dev=(HR@5:0.1951,NDCG@5:0.1318) [5.3 s]
+INFO:root:Epoch 55    loss=0.0297 [5.7 s]    dev=(HR@5:0.1890,NDCG@5:0.1320) [5.2 s]
+INFO:root:Epoch 56    loss=0.0273 [5.6 s]    dev=(HR@5:0.2012,NDCG@5:0.1364) [5.4 s]
+INFO:root:Early stop at 56 based on dev result.
+INFO:root:
+Best Iter(dev)=   36	 dev=(HR@5:0.2500,NDCG@5:0.1672) [640.5 s] 
+INFO:root:Load model from ../model/NeuMF/NeuMF__Automotive__0__lr=0.0005__l2=1e-07__emb_size=64__layers=[64].pt
+INFO:root:
+Test After Training: (HR@5:0.2134,NDCG@5:0.1402,HR@10:0.3415,NDCG@10:0.1803,HR@20:0.4329,NDCG@20:0.2031,HR@50:0.6463,NDCG@50:0.2451)
+INFO:root:
+--------------------------------------------- END: 2022-01-13 00:39:35 ---------------------------------------------

@@ -1,0 +1,235 @@
+INFO:root:Namespace(model_name='KDA')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-14 20:19:24 ---------------------------------------------
+INFO:root:
+==================================
+ Arguments       | Values         
+==================================
+ attention_size  | 10            
+ batch_size      | 256           
+ dataset         | Toys_and_Games
+ dropout         | 0             
+ early_stop      | 10            
+ emb_size        | 64            
+ epoch           | 200           
+ eval_batch_size | 256           
+ freq_rand       | 0             
+ gamma           | -1            
+ gpu             | 0             
+ history_max     | 20            
+ include_attr    | 1             
+ include_val     | 1             
+ l2              | 1e-06         
+ lr              | 0.001         
+ n_dft           | 64            
+ neg_head_p      | 0.5           
+ num_heads       | 4             
+ num_layers      | 1             
+ num_neg         | 1             
+ num_workers     | 5             
+ optimizer       | Adam          
+ pooling         | average       
+ random_seed     | 0             
+ t_scalar        | 60            
+ test_all        | 0             
+ topk            | 5,10,20,50    
+==================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Toys_and_Games" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 19412, "# item": 11924, "# entry": 130721
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:Attribute-based relations:['i_category']
+INFO:root:"# relation": 4, "# triplet": 623023
+INFO:root:Save corpus to ../data/Toys_and_Games\DFTReader.pkl
+INFO:root:#params: 2049629
+INFO:root:KDA(
+  (user_embeddings): Embedding(19413, 64)
+  (entity_embeddings): Embedding(12094, 64)
+  (relation_embeddings): Embedding(4, 64)
+  (relational_dynamic_aggregation): RelationalDynamicAggregation(
+    (relation_embeddings): Embedding(4, 64)
+    (freq_real): Embedding(4, 33)
+    (freq_imag): Embedding(4, 33)
+  )
+  (attn_head): MultiHeadAttention(
+    (q_linear): Linear(in_features=64, out_features=64, bias=False)
+    (k_linear): Linear(in_features=64, out_features=64, bias=False)
+    (v_linear): Linear(in_features=64, out_features=64, bias=False)
+  )
+  (W1): Linear(in_features=64, out_features=64, bias=True)
+  (W2): Linear(in_features=64, out_features=64, bias=True)
+  (dropout_layer): Dropout(p=0, inplace=False)
+  (layer_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+  (item_bias): Embedding(11925, 1)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=3.8677 [61.6 s]    dev=(HR@5:0.3296,NDCG@5:0.2073) [14.0 s] *
+INFO:root:Epoch 2     loss=3.5128 [60.5 s]    dev=(HR@5:0.4076,NDCG@5:0.2598) [14.2 s] *
+INFO:root:Epoch 3     loss=2.4863 [52.2 s]    dev=(HR@5:0.4887,NDCG@5:0.3246) [13.7 s] *
+INFO:root:Epoch 4     loss=1.4733 [59.0 s]    dev=(HR@5:0.5133,NDCG@5:0.3606) [13.7 s] *
+INFO:root:Epoch 5     loss=0.9527 [58.5 s]    dev=(HR@5:0.5431,NDCG@5:0.3831) [13.7 s] *
+INFO:root:Epoch 6     loss=0.6945 [58.4 s]    dev=(HR@5:0.5524,NDCG@5:0.3886) [13.6 s] *
+INFO:root:Epoch 7     loss=0.5533 [58.6 s]    dev=(HR@5:0.5760,NDCG@5:0.4018) [13.8 s] *
+INFO:root:Epoch 8     loss=0.4704 [58.8 s]    dev=(HR@5:0.5780,NDCG@5:0.4062) [13.8 s] *
+INFO:root:Epoch 9     loss=0.4144 [58.5 s]    dev=(HR@5:0.5575,NDCG@5:0.3914) [13.8 s]
+INFO:root:Epoch 10    loss=0.3545 [58.4 s]    dev=(HR@5:0.5811,NDCG@5:0.4186) [13.9 s] *
+INFO:root:Epoch 11    loss=0.3262 [58.3 s]    dev=(HR@5:0.6027,NDCG@5:0.4337) [13.6 s] *
+INFO:root:Epoch 12    loss=0.3041 [58.2 s]    dev=(HR@5:0.5924,NDCG@5:0.4321) [13.5 s]
+INFO:root:Epoch 13    loss=0.2850 [58.1 s]    dev=(HR@5:0.5996,NDCG@5:0.4249) [13.5 s]
+INFO:root:Epoch 14    loss=0.2714 [58.2 s]    dev=(HR@5:0.5975,NDCG@5:0.4316) [13.5 s]
+INFO:root:Epoch 15    loss=0.2604 [58.1 s]    dev=(HR@5:0.6088,NDCG@5:0.4346) [13.5 s] *
+INFO:root:Epoch 16    loss=0.2419 [58.1 s]    dev=(HR@5:0.6201,NDCG@5:0.4450) [13.6 s] *
+INFO:root:Epoch 17    loss=0.2359 [58.3 s]    dev=(HR@5:0.5852,NDCG@5:0.4291) [13.5 s]
+INFO:root:Epoch 18    loss=0.2278 [58.0 s]    dev=(HR@5:0.5780,NDCG@5:0.4160) [13.4 s]
+INFO:root:Epoch 19    loss=0.2256 [58.0 s]    dev=(HR@5:0.5883,NDCG@5:0.4263) [13.5 s]
+INFO:root:Epoch 20    loss=0.2134 [58.0 s]    dev=(HR@5:0.5934,NDCG@5:0.4351) [13.5 s]
+INFO:root:Epoch 21    loss=0.2083 [58.3 s]    dev=(HR@5:0.6027,NDCG@5:0.4387) [13.5 s]
+INFO:root:Epoch 22    loss=0.1999 [58.1 s]    dev=(HR@5:0.6037,NDCG@5:0.4419) [13.5 s]
+INFO:root:Epoch 23    loss=0.1998 [58.2 s]    dev=(HR@5:0.5975,NDCG@5:0.4365) [13.5 s]
+INFO:root:Epoch 24    loss=0.1927 [58.1 s]    dev=(HR@5:0.6273,NDCG@5:0.4639) [13.5 s] *
+INFO:root:Epoch 25    loss=0.1935 [58.0 s]    dev=(HR@5:0.6129,NDCG@5:0.4533) [13.5 s]
+INFO:root:Epoch 26    loss=0.1891 [58.1 s]    dev=(HR@5:0.6191,NDCG@5:0.4509) [13.5 s]
+INFO:root:Epoch 27    loss=0.1823 [58.2 s]    dev=(HR@5:0.6140,NDCG@5:0.4503) [13.5 s]
+INFO:root:Epoch 28    loss=0.1780 [58.3 s]    dev=(HR@5:0.6191,NDCG@5:0.4451) [13.6 s]
+INFO:root:Epoch 29    loss=0.1772 [58.4 s]    dev=(HR@5:0.6222,NDCG@5:0.4578) [13.7 s]
+INFO:root:Epoch 30    loss=0.1813 [58.3 s]    dev=(HR@5:0.6222,NDCG@5:0.4570) [13.6 s]
+INFO:root:Epoch 31    loss=0.1741 [58.0 s]    dev=(HR@5:0.6211,NDCG@5:0.4546) [13.6 s]
+INFO:root:Epoch 32    loss=0.1750 [58.2 s]    dev=(HR@5:0.6109,NDCG@5:0.4484) [13.6 s]
+INFO:root:Epoch 33    loss=0.1663 [58.3 s]    dev=(HR@5:0.6099,NDCG@5:0.4546) [13.5 s]
+INFO:root:Epoch 34    loss=0.1600 [58.2 s]    dev=(HR@5:0.6211,NDCG@5:0.4700) [13.5 s] *
+INFO:root:Epoch 35    loss=0.1595 [58.0 s]    dev=(HR@5:0.6068,NDCG@5:0.4456) [13.5 s]
+INFO:root:Epoch 36    loss=0.1610 [58.2 s]    dev=(HR@5:0.6129,NDCG@5:0.4513) [13.5 s]
+INFO:root:Epoch 37    loss=0.1594 [58.1 s]    dev=(HR@5:0.6068,NDCG@5:0.4579) [13.6 s]
+INFO:root:Epoch 38    loss=0.1607 [58.1 s]    dev=(HR@5:0.6140,NDCG@5:0.4566) [13.6 s]
+INFO:root:Epoch 39    loss=0.1552 [58.4 s]    dev=(HR@5:0.6191,NDCG@5:0.4616) [13.5 s]
+INFO:root:Epoch 40    loss=0.1557 [58.2 s]    dev=(HR@5:0.6181,NDCG@5:0.4611) [13.5 s]
+INFO:root:Epoch 41    loss=0.1543 [58.2 s]    dev=(HR@5:0.6027,NDCG@5:0.4492) [13.6 s]
+INFO:root:Epoch 42    loss=0.1523 [58.6 s]    dev=(HR@5:0.6016,NDCG@5:0.4365) [13.6 s]
+INFO:root:Epoch 43    loss=0.1493 [58.2 s]    dev=(HR@5:0.6006,NDCG@5:0.4459) [13.5 s]
+INFO:root:Epoch 44    loss=0.1477 [58.3 s]    dev=(HR@5:0.6078,NDCG@5:0.4607) [13.6 s]
+INFO:root:Epoch 45    loss=0.1433 [58.3 s]    dev=(HR@5:0.6150,NDCG@5:0.4531) [13.6 s]
+INFO:root:Epoch 46    loss=0.1532 [58.4 s]    dev=(HR@5:0.6099,NDCG@5:0.4446) [13.6 s]
+INFO:root:Epoch 47    loss=0.1465 [58.4 s]    dev=(HR@5:0.6006,NDCG@5:0.4438) [13.8 s]
+INFO:root:Epoch 48    loss=0.1395 [58.2 s]    dev=(HR@5:0.6027,NDCG@5:0.4536) [13.6 s]
+INFO:root:Epoch 49    loss=0.1499 [58.3 s]    dev=(HR@5:0.6160,NDCG@5:0.4559) [13.7 s]
+INFO:root:Epoch 50    loss=0.1414 [58.2 s]    dev=(HR@5:0.6222,NDCG@5:0.4655) [13.5 s]
+INFO:root:Epoch 51    loss=0.1362 [58.4 s]    dev=(HR@5:0.6047,NDCG@5:0.4503) [13.6 s]
+INFO:root:Epoch 52    loss=0.1406 [58.3 s]    dev=(HR@5:0.6181,NDCG@5:0.4696) [13.7 s]
+INFO:root:Epoch 53    loss=0.1364 [58.3 s]    dev=(HR@5:0.6211,NDCG@5:0.4584) [13.5 s]
+INFO:root:Epoch 54    loss=0.1404 [58.5 s]    dev=(HR@5:0.6211,NDCG@5:0.4673) [13.6 s]
+INFO:root:Early stop at 54 based on dev result.
+INFO:root:
+Best Iter(dev)=   34	 dev=(HR@5:0.6211,NDCG@5:0.4700) [3880.8 s] 
+INFO:root:Load model from ../model/KDA/KDA__Toys_and_Games__0__lr=0.001__l2=1e-06__num_layers=1__num_heads=4__gamma=-1__freq_rand=0__include_val=1.pt
+INFO:root:
+Test After Training: (HR@5:0.5554,NDCG@5:0.4081,HR@10:0.6910,NDCG@10:0.4519,HR@20:0.8183,NDCG@20:0.4837,HR@50:0.9312,NDCG@50:0.5063)
+INFO:root:
+--------------------------------------------- END: 2022-01-14 21:24:46 ---------------------------------------------
+INFO:root:Namespace(model_name='KDA')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-19 01:21:11 ---------------------------------------------
+INFO:root:
+==================================
+ Arguments       | Values         
+==================================
+ attention_size  | 10            
+ batch_size      | 256           
+ dataset         | Toys_and_Games
+ dropout         | 0             
+ early_stop      | 10            
+ emb_size        | 64            
+ epoch           | 200           
+ eval_batch_size | 256           
+ freq_rand       | 0             
+ gamma           | -1            
+ gpu             | 0             
+ history_max     | 20            
+ include_attr    | 1             
+ include_val     | 1             
+ l2              | 1e-06         
+ lr              | 0.001         
+ n_dft           | 64            
+ neg_head_p      | 0.5           
+ num_heads       | 4             
+ num_layers      | 1             
+ num_neg         | 1             
+ num_workers     | 5             
+ optimizer       | Adam          
+ pooling         | average       
+ random_seed     | 0             
+ t_scalar        | 60            
+ test_all        | 0             
+ topk            | 5,10,20,50    
+==================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Toys_and_Games" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 19412, "# item": 11924, "# entry": 165649
+INFO:root:Appending history info...
+INFO:root:Constructing relation triplets...
+INFO:root:Item-item relations:['r_complement', 'r_substitute']
+INFO:root:Attribute-based relations:['i_category']
+INFO:root:"# relation": 4, "# triplet": 623023
+INFO:root:Save corpus to ../data/Toys_and_Games\DFTReader.pkl
+INFO:root:#params: 2049629
+INFO:root:KDA(
+  (user_embeddings): Embedding(19413, 64)
+  (entity_embeddings): Embedding(12094, 64)
+  (relation_embeddings): Embedding(4, 64)
+  (relational_dynamic_aggregation): RelationalDynamicAggregation(
+    (relation_embeddings): Embedding(4, 64)
+    (freq_real): Embedding(4, 33)
+    (freq_imag): Embedding(4, 33)
+  )
+  (attn_head): MultiHeadAttention(
+    (q_linear): Linear(in_features=64, out_features=64, bias=False)
+    (k_linear): Linear(in_features=64, out_features=64, bias=False)
+    (v_linear): Linear(in_features=64, out_features=64, bias=False)
+  )
+  (W1): Linear(in_features=64, out_features=64, bias=True)
+  (W2): Linear(in_features=64, out_features=64, bias=True)
+  (dropout_layer): Dropout(p=0, inplace=False)
+  (layer_norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+  (item_bias): Embedding(11925, 1)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=3.1720 [53.9 s]    dev=(HR@5:0.2674,NDCG@5:0.1836) [57.3 s] *
+INFO:root:Epoch 2     loss=2.8762 [70.3 s]    dev=(HR@5:0.3757,NDCG@5:0.2682) [81.6 s] *
+INFO:root:Epoch 3     loss=2.1657 [63.5 s]    dev=(HR@5:0.4394,NDCG@5:0.3225) [57.2 s] *
+INFO:root:Epoch 4     loss=1.3479 [70.6 s]    dev=(HR@5:0.4753,NDCG@5:0.3612) [81.1 s] *
+INFO:root:Epoch 5     loss=0.8698 [67.5 s]    dev=(HR@5:0.4935,NDCG@5:0.3770) [79.8 s] *
+INFO:root:Epoch 6     loss=0.6265 [70.0 s]    dev=(HR@5:0.5090,NDCG@5:0.3908) [76.0 s] *
+INFO:root:Epoch 7     loss=0.4921 [72.3 s]    dev=(HR@5:0.5117,NDCG@5:0.3961) [81.0 s] *
+INFO:root:Epoch 8     loss=0.4142 [68.9 s]    dev=(HR@5:0.5158,NDCG@5:0.3989) [81.9 s] *
+INFO:root:Epoch 9     loss=0.3630 [67.4 s]    dev=(HR@5:0.5202,NDCG@5:0.4037) [81.8 s] *
+INFO:root:Epoch 10    loss=0.3098 [69.0 s]    dev=(HR@5:0.5156,NDCG@5:0.4030) [77.5 s]
+INFO:root:Epoch 11    loss=0.2826 [68.6 s]    dev=(HR@5:0.5242,NDCG@5:0.4100) [80.3 s] *
+INFO:root:Epoch 12    loss=0.2632 [69.4 s]    dev=(HR@5:0.5229,NDCG@5:0.4081) [78.6 s]
+INFO:root:Epoch 13    loss=0.2461 [69.1 s]    dev=(HR@5:0.5201,NDCG@5:0.4060) [76.5 s]
+INFO:root:Epoch 14    loss=0.2333 [70.2 s]    dev=(HR@5:0.5185,NDCG@5:0.4058) [80.4 s]
+INFO:root:Epoch 15    loss=0.2238 [63.8 s]    dev=(HR@5:0.5226,NDCG@5:0.4098) [81.6 s]
+INFO:root:Epoch 16    loss=0.2085 [68.8 s]    dev=(HR@5:0.5175,NDCG@5:0.4064) [76.4 s]
+INFO:root:Epoch 17    loss=0.2026 [70.6 s]    dev=(HR@5:0.5117,NDCG@5:0.4022) [75.9 s]
+INFO:root:Epoch 18    loss=0.1953 [70.6 s]    dev=(HR@5:0.5137,NDCG@5:0.4026) [79.1 s]
+INFO:root:Epoch 19    loss=0.1934 [70.2 s]    dev=(HR@5:0.5153,NDCG@5:0.4033) [74.8 s]
+INFO:root:Epoch 20    loss=0.1837 [69.7 s]    dev=(HR@5:0.5181,NDCG@5:0.4056) [81.4 s]
+INFO:root:Epoch 21    loss=0.1790 [69.7 s]    dev=(HR@5:0.5152,NDCG@5:0.4038) [79.8 s]
+INFO:root:Epoch 22    loss=0.1708 [68.6 s]    dev=(HR@5:0.5123,NDCG@5:0.4019) [79.5 s]
+INFO:root:Epoch 23    loss=0.1714 [71.3 s]    dev=(HR@5:0.5136,NDCG@5:0.4034) [80.4 s]
+INFO:root:Epoch 24    loss=0.1656 [69.2 s]    dev=(HR@5:0.5142,NDCG@5:0.4044) [76.6 s]
+INFO:root:Epoch 25    loss=0.1665 [71.0 s]    dev=(HR@5:0.5163,NDCG@5:0.4044) [76.1 s]
+INFO:root:Epoch 26    loss=0.1627 [69.9 s]    dev=(HR@5:0.5124,NDCG@5:0.4027) [78.6 s]
+INFO:root:Epoch 27    loss=0.1572 [70.0 s]    dev=(HR@5:0.5103,NDCG@5:0.4002) [75.5 s]
+INFO:root:Epoch 28    loss=0.1535 [69.9 s]    dev=(HR@5:0.5121,NDCG@5:0.4022) [79.8 s]
+INFO:root:Epoch 29    loss=0.1520 [69.6 s]    dev=(HR@5:0.5099,NDCG@5:0.4015) [76.7 s]
+INFO:root:Epoch 30    loss=0.1553 [70.6 s]    dev=(HR@5:0.5113,NDCG@5:0.4011) [76.5 s]
+INFO:root:Epoch 31    loss=0.1493 [69.7 s]    dev=(HR@5:0.5073,NDCG@5:0.3997) [81.6 s]
+INFO:root:Early stop at 31 based on dev result.
+INFO:root:
+Best Iter(dev)=   11	 dev=(HR@5:0.5242,NDCG@5:0.4100) [4535.2 s] 
+INFO:root:Load model from ../model/KDA/KDA__Toys_and_Games__0__lr=0.001__l2=1e-06__num_layers=1__num_heads=4__gamma=-1__freq_rand=0__include_val=1.pt
+INFO:root:
+Test After Training: (HR@5:0.5052,NDCG@5:0.3891,HR@10:0.6071,NDCG@10:0.4221,HR@20:0.7156,NDCG@20:0.4495,HR@50:0.8872,NDCG@50:0.4836)
+INFO:root:
+--------------------------------------------- END: 2022-01-19 02:38:45 ---------------------------------------------

@@ -1,0 +1,85 @@
+INFO:root:Namespace(model_name='Chorus')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-09 14:25:53 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ base_method     | BPR                
+ batch_size      | 256                
+ category_col    | i_category         
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ history_max     | 20                 
+ include_attr    | 0                  
+ l2              | 0.0                
+ lr              | 0.001              
+ lr_scale        | 0.1                
+ margin          | 1.0                
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ stage           | 2                  
+ test_all        | 0                  
+ time_scalar     | 8640000            
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Load corpus from ../data/Musical_Instruments\KGReader.pkl
+INFO:root:#params: 152095
+INFO:root:Chorus(
+  (u_embeddings): Embedding(1430, 64)
+  (i_embeddings): Embedding(901, 64)
+  (r_embeddings): Embedding(3, 64)
+  (betas): Embedding(36, 3)
+  (mus): Embedding(36, 3)
+  (sigmas): Embedding(36, 3)
+  (prediction): Linear(in_features=64, out_features=1, bias=False)
+  (user_bias): Embedding(1430, 1)
+  (item_bias): Embedding(901, 1)
+  (kg_loss): MarginRankingLoss()
+)
+INFO:root:Load model from ../model/Chorus/KG__Musical_Instruments__emb_size=64__margin=1.0.pt
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6885 [9.4 s]    dev=(HR@5:0.1903,NDCG@5:0.1227) [9.4 s] *
+INFO:root:Epoch 2     loss=0.6688 [10.0 s]    dev=(HR@5:0.2729,NDCG@5:0.1811) [10.8 s] *
+INFO:root:Epoch 3     loss=0.6507 [9.6 s]    dev=(HR@5:0.3009,NDCG@5:0.2009) [10.6 s] *
+INFO:root:Epoch 4     loss=0.6332 [10.5 s]    dev=(HR@5:0.3121,NDCG@5:0.2130) [10.4 s] *
+INFO:root:Epoch 5     loss=0.6152 [9.8 s]    dev=(HR@5:0.3198,NDCG@5:0.2163) [9.5 s] *
+INFO:root:Epoch 6     loss=0.5988 [10.2 s]    dev=(HR@5:0.3233,NDCG@5:0.2232) [10.5 s] *
+INFO:root:Epoch 7     loss=0.5829 [9.0 s]    dev=(HR@5:0.3275,NDCG@5:0.2255) [9.7 s] *
+INFO:root:Epoch 8     loss=0.5672 [9.7 s]    dev=(HR@5:0.3317,NDCG@5:0.2263) [10.1 s] *
+INFO:root:Epoch 9     loss=0.5518 [9.7 s]    dev=(HR@5:0.3296,NDCG@5:0.2266) [9.4 s] *
+INFO:root:Epoch 10    loss=0.5350 [10.6 s]    dev=(HR@5:0.3296,NDCG@5:0.2259) [10.4 s]
+INFO:root:Epoch 11    loss=0.5210 [10.2 s]    dev=(HR@5:0.3296,NDCG@5:0.2248) [10.6 s]
+INFO:root:Epoch 12    loss=0.5062 [10.3 s]    dev=(HR@5:0.3289,NDCG@5:0.2237) [9.6 s]
+INFO:root:Epoch 13    loss=0.4928 [10.5 s]    dev=(HR@5:0.3254,NDCG@5:0.2218) [118.7 s]
+INFO:root:Epoch 14    loss=0.4780 [8.3 s]    dev=(HR@5:0.3303,NDCG@5:0.2206) [9.3 s]
+INFO:root:Epoch 15    loss=0.4640 [9.4 s]    dev=(HR@5:0.3254,NDCG@5:0.2174) [9.5 s]
+INFO:root:Epoch 16    loss=0.4531 [9.3 s]    dev=(HR@5:0.3233,NDCG@5:0.2154) [9.5 s]
+INFO:root:Epoch 17    loss=0.4390 [9.2 s]    dev=(HR@5:0.3156,NDCG@5:0.2118) [9.5 s]
+INFO:root:Epoch 18    loss=0.4288 [9.7 s]    dev=(HR@5:0.3170,NDCG@5:0.2136) [9.1 s]
+INFO:root:Epoch 19    loss=0.4171 [8.8 s]    dev=(HR@5:0.3170,NDCG@5:0.2124) [9.6 s]
+INFO:root:Epoch 20    loss=0.4099 [9.6 s]    dev=(HR@5:0.3184,NDCG@5:0.2134) [10.0 s]
+INFO:root:Epoch 21    loss=0.4017 [9.5 s]    dev=(HR@5:0.3191,NDCG@5:0.2131) [9.5 s]
+INFO:root:Epoch 22    loss=0.3918 [9.5 s]    dev=(HR@5:0.3205,NDCG@5:0.2147) [8.9 s]
+INFO:root:Epoch 23    loss=0.3798 [9.2 s]    dev=(HR@5:0.3191,NDCG@5:0.2147) [9.0 s]
+INFO:root:Epoch 24    loss=0.3743 [9.6 s]    dev=(HR@5:0.3205,NDCG@5:0.2155) [9.4 s]
+INFO:root:Epoch 25    loss=0.3673 [8.4 s]    dev=(HR@5:0.3198,NDCG@5:0.2167) [9.3 s]
+INFO:root:Epoch 26    loss=0.3588 [8.9 s]    dev=(HR@5:0.3226,NDCG@5:0.2181) [9.4 s]
+INFO:root:Epoch 27    loss=0.3533 [9.5 s]    dev=(HR@5:0.3233,NDCG@5:0.2178) [9.4 s]
+INFO:root:Epoch 28    loss=0.3495 [9.4 s]    dev=(HR@5:0.3240,NDCG@5:0.2184) [9.4 s]
+INFO:root:Epoch 29    loss=0.3400 [9.0 s]    dev=(HR@5:0.3240,NDCG@5:0.2183) [9.3 s]
+INFO:root:Early stop at 29 based on dev result.
+INFO:root:
+Best Iter(dev)=    9	 dev=(HR@5:0.3296,NDCG@5:0.2266) [666.8 s] 
+INFO:root:Load model from ../model/Chorus/Chorus__Musical_Instruments__0__lr=0.001__l2=0.0__margin=1.0__lr_scale=0.1__stage=2.pt
+INFO:root:
+Test After Training: (HR@5:0.2694,NDCG@5:0.1811,HR@10:0.4143,NDCG@10:0.2279,HR@20:0.5647,NDCG@20:0.2657,HR@50:0.8125,NDCG@50:0.3149)
+INFO:root:
+--------------------------------------------- END: 2022-01-09 14:37:13 ---------------------------------------------

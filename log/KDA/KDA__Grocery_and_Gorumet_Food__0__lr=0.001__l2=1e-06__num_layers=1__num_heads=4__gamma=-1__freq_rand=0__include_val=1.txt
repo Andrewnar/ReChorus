@@ -1,0 +1,74 @@
+INFO:root:Namespace(model_name='KDA')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 14:20:15 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ attention_size  | 10                  
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gorum...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ freq_rand       | 0                   
+ gamma           | -1                  
+ gpu             | 0                   
+ history_max     | 20                  
+ include_attr    | 1                   
+ include_val     | 1                   
+ l2              | 1e-06               
+ lr              | 0.001               
+ n_dft           | 64                  
+ neg_head_p      | 0.5                 
+ num_heads       | 4                   
+ num_layers      | 1                   
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ pooling         | average             
+ random_seed     | 0                   
+ t_scalar        | 60                  
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gorumet_Food" 
+INFO:root:Namespace(model_name='KDA')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-13 14:27:53 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ attention_size  | 10                  
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gorum...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ freq_rand       | 0                   
+ gamma           | -1                  
+ gpu             | 0                   
+ history_max     | 20                  
+ include_attr    | 1                   
+ include_val     | 1                   
+ l2              | 1e-06               
+ lr              | 0.001               
+ n_dft           | 64                  
+ neg_head_p      | 0.5                 
+ num_heads       | 4                   
+ num_layers      | 1                   
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ pooling         | average             
+ random_seed     | 0                   
+ t_scalar        | 60                  
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gorumet_Food" 

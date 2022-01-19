@@ -1,0 +1,158 @@
+INFO:root:Namespace(model_name='GRU4Rec')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-11 12:43:39 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ hidden_size     | 100                
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 10111
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 113928
+INFO:root:GRU4Rec(
+  (i_embeddings): Embedding(901, 64)
+  (rnn): GRU(64, 100, batch_first=True)
+  (out): Linear(in_features=100, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6873 [13.0 s]    dev=(HR@5:0.2105,NDCG@5:0.1431) [10.0 s] *
+INFO:root:Epoch 2     loss=0.6184 [11.1 s]    dev=(HR@5:0.2164,NDCG@5:0.1463) [9.8 s] *
+INFO:root:Epoch 3     loss=0.5771 [10.7 s]    dev=(HR@5:0.2090,NDCG@5:0.1427) [9.9 s]
+INFO:root:Epoch 4     loss=0.5631 [10.8 s]    dev=(HR@5:0.2053,NDCG@5:0.1414) [9.9 s]
+INFO:root:Epoch 5     loss=0.5528 [10.7 s]    dev=(HR@5:0.2149,NDCG@5:0.1445) [9.6 s]
+INFO:root:Epoch 6     loss=0.5538 [10.7 s]    dev=(HR@5:0.2194,NDCG@5:0.1478) [9.6 s] *
+INFO:root:Epoch 7     loss=0.5534 [10.7 s]    dev=(HR@5:0.2186,NDCG@5:0.1449) [10.5 s]
+INFO:root:Epoch 8     loss=0.5567 [10.8 s]    dev=(HR@5:0.2238,NDCG@5:0.1488) [10.4 s] *
+INFO:root:Epoch 9     loss=0.5515 [11.8 s]    dev=(HR@5:0.2230,NDCG@5:0.1495) [10.8 s] *
+INFO:root:Epoch 10    loss=0.5421 [12.6 s]    dev=(HR@5:0.2201,NDCG@5:0.1473) [11.1 s]
+INFO:root:Epoch 11    loss=0.5464 [11.9 s]    dev=(HR@5:0.2245,NDCG@5:0.1523) [10.5 s] *
+INFO:root:Epoch 12    loss=0.5452 [11.0 s]    dev=(HR@5:0.2223,NDCG@5:0.1486) [10.3 s]
+INFO:root:Epoch 13    loss=0.5510 [11.6 s]    dev=(HR@5:0.2142,NDCG@5:0.1451) [11.0 s]
+INFO:root:Epoch 14    loss=0.5464 [14.1 s]    dev=(HR@5:0.2164,NDCG@5:0.1434) [10.9 s]
+INFO:root:Epoch 15    loss=0.5495 [11.8 s]    dev=(HR@5:0.2157,NDCG@5:0.1439) [10.6 s]
+INFO:root:Epoch 16    loss=0.5407 [11.8 s]    dev=(HR@5:0.2171,NDCG@5:0.1437) [10.6 s]
+INFO:root:Epoch 17    loss=0.5425 [11.8 s]    dev=(HR@5:0.2260,NDCG@5:0.1498) [11.1 s]
+INFO:root:Epoch 18    loss=0.5400 [11.9 s]    dev=(HR@5:0.2171,NDCG@5:0.1449) [10.3 s]
+INFO:root:Epoch 19    loss=0.5364 [11.3 s]    dev=(HR@5:0.2208,NDCG@5:0.1451) [10.4 s]
+INFO:root:Epoch 20    loss=0.5414 [11.0 s]    dev=(HR@5:0.2179,NDCG@5:0.1450) [10.5 s]
+INFO:root:Epoch 21    loss=0.5284 [11.6 s]    dev=(HR@5:0.2194,NDCG@5:0.1491) [10.5 s]
+INFO:root:Epoch 22    loss=0.5261 [11.4 s]    dev=(HR@5:0.2157,NDCG@5:0.1474) [10.6 s]
+INFO:root:Epoch 23    loss=0.5206 [11.0 s]    dev=(HR@5:0.2194,NDCG@5:0.1500) [11.0 s]
+INFO:root:Epoch 24    loss=0.5238 [11.4 s]    dev=(HR@5:0.2127,NDCG@5:0.1484) [10.6 s]
+INFO:root:Epoch 25    loss=0.5181 [12.1 s]    dev=(HR@5:0.2149,NDCG@5:0.1487) [10.4 s]
+INFO:root:Epoch 26    loss=0.5103 [11.7 s]    dev=(HR@5:0.2031,NDCG@5:0.1426) [10.4 s]
+INFO:root:Epoch 27    loss=0.5068 [11.3 s]    dev=(HR@5:0.2053,NDCG@5:0.1425) [10.4 s]
+INFO:root:Epoch 28    loss=0.5112 [11.5 s]    dev=(HR@5:0.2046,NDCG@5:0.1418) [10.0 s]
+INFO:root:Epoch 29    loss=0.4998 [11.4 s]    dev=(HR@5:0.2127,NDCG@5:0.1451) [10.4 s]
+INFO:root:Epoch 30    loss=0.5007 [11.1 s]    dev=(HR@5:0.2105,NDCG@5:0.1453) [10.3 s]
+INFO:root:Epoch 31    loss=0.4925 [11.4 s]    dev=(HR@5:0.2105,NDCG@5:0.1419) [10.5 s]
+INFO:root:Early stop at 31 based on dev result.
+INFO:root:
+Best Iter(dev)=   11	 dev=(HR@5:0.2245,NDCG@5:0.1523) [680.2 s] 
+INFO:root:Load model from ../model/GRU4Rec/GRU4Rec__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__hidden_size=100.pt
+INFO:root:
+Test After Training: (HR@5:0.1920,NDCG@5:0.1310,HR@10:0.2644,NDCG@10:0.1543,HR@20:0.3730,NDCG@20:0.1815,HR@50:0.6174,NDCG@50:0.2291)
+INFO:root:
+--------------------------------------------- END: 2022-01-11 12:55:10 ---------------------------------------------
+INFO:root:Namespace(model_name='GRU4Rec')
+INFO:root:--------------------------------------------- BEGIN: 2022-01-11 13:01:04 ---------------------------------------------
+INFO:root:
+=======================================
+ Arguments       | Values              
+=======================================
+ batch_size      | 256                
+ dataset         | Musical_Instruments
+ dropout         | 0                  
+ early_stop      | 10                 
+ emb_size        | 64                 
+ epoch           | 200                
+ eval_batch_size | 256                
+ gpu             | 0                  
+ hidden_size     | 100                
+ history_max     | 20                 
+ l2              | 0.0001             
+ lr              | 0.001              
+ num_neg         | 1                  
+ num_workers     | 5                  
+ optimizer       | Adam               
+ random_seed     | 0                  
+ test_all        | 0                  
+ topk            | 5,10,20,50         
+=======================================
+INFO:root:GPU available: False
+INFO:root:Reading data from "../data/", dataset = "Musical_Instruments" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 1429, "# item": 900, "# entry": 7553
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/Musical_Instruments\BaseReader.pkl
+INFO:root:#params: 113928
+INFO:root:GRU4Rec(
+  (i_embeddings): Embedding(901, 64)
+  (rnn): GRU(64, 100, batch_first=True)
+  (out): Linear(in_features=100, out_features=64, bias=True)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6873 [12.6 s]    dev=(HR@5:0.1867,NDCG@5:0.1276) [9.7 s] *
+INFO:root:Epoch 2     loss=0.6184 [10.8 s]    dev=(HR@5:0.2133,NDCG@5:0.1564) [9.0 s] *
+INFO:root:Epoch 3     loss=0.5771 [10.4 s]    dev=(HR@5:0.2000,NDCG@5:0.1470) [9.1 s]
+INFO:root:Epoch 4     loss=0.5631 [10.6 s]    dev=(HR@5:0.1733,NDCG@5:0.1310) [9.1 s]
+INFO:root:Epoch 5     loss=0.5528 [14.6 s]    dev=(HR@5:0.1867,NDCG@5:0.1297) [10.6 s]
+INFO:root:Epoch 6     loss=0.5538 [10.8 s]    dev=(HR@5:0.2267,NDCG@5:0.1488) [9.0 s]
+INFO:root:Epoch 7     loss=0.5534 [10.7 s]    dev=(HR@5:0.2533,NDCG@5:0.1543) [9.2 s]
+INFO:root:Epoch 8     loss=0.5567 [11.5 s]    dev=(HR@5:0.2267,NDCG@5:0.1503) [9.9 s]
+INFO:root:Epoch 9     loss=0.5515 [11.2 s]    dev=(HR@5:0.2000,NDCG@5:0.1377) [9.7 s]
+INFO:root:Epoch 10    loss=0.5421 [11.0 s]    dev=(HR@5:0.2133,NDCG@5:0.1485) [9.8 s]
+INFO:root:Epoch 11    loss=0.5464 [11.6 s]    dev=(HR@5:0.2400,NDCG@5:0.1629) [10.3 s] *
+INFO:root:Epoch 12    loss=0.5452 [11.4 s]    dev=(HR@5:0.2267,NDCG@5:0.1482) [10.2 s]
+INFO:root:Epoch 13    loss=0.5510 [11.1 s]    dev=(HR@5:0.2133,NDCG@5:0.1535) [9.7 s]
+INFO:root:Epoch 14    loss=0.5464 [11.0 s]    dev=(HR@5:0.2267,NDCG@5:0.1546) [9.9 s]
+INFO:root:Epoch 15    loss=0.5495 [10.9 s]    dev=(HR@5:0.2400,NDCG@5:0.1680) [9.7 s] *
+INFO:root:Epoch 16    loss=0.5407 [10.9 s]    dev=(HR@5:0.2267,NDCG@5:0.1560) [10.4 s]
+INFO:root:Epoch 17    loss=0.5425 [11.3 s]    dev=(HR@5:0.2133,NDCG@5:0.1485) [10.1 s]
+INFO:root:Epoch 18    loss=0.5400 [12.0 s]    dev=(HR@5:0.2267,NDCG@5:0.1431) [9.6 s]
+INFO:root:Epoch 19    loss=0.5364 [10.8 s]    dev=(HR@5:0.2400,NDCG@5:0.1530) [9.3 s]
+INFO:root:Epoch 20    loss=0.5414 [11.3 s]    dev=(HR@5:0.2533,NDCG@5:0.1589) [9.9 s]
+INFO:root:Epoch 21    loss=0.5284 [11.3 s]    dev=(HR@5:0.2400,NDCG@5:0.1549) [9.7 s]
+INFO:root:Epoch 22    loss=0.5261 [11.5 s]    dev=(HR@5:0.2000,NDCG@5:0.1385) [9.6 s]
+INFO:root:Epoch 23    loss=0.5206 [10.8 s]    dev=(HR@5:0.2133,NDCG@5:0.1337) [9.7 s]
+INFO:root:Epoch 24    loss=0.5238 [11.0 s]    dev=(HR@5:0.2000,NDCG@5:0.1254) [9.5 s]
+INFO:root:Epoch 25    loss=0.5181 [10.8 s]    dev=(HR@5:0.2267,NDCG@5:0.1393) [10.0 s]
+INFO:root:Epoch 26    loss=0.5103 [11.3 s]    dev=(HR@5:0.2000,NDCG@5:0.1248) [9.8 s]
+INFO:root:Epoch 27    loss=0.5068 [11.2 s]    dev=(HR@5:0.1733,NDCG@5:0.1254) [9.5 s]
+INFO:root:Epoch 28    loss=0.5112 [11.5 s]    dev=(HR@5:0.1600,NDCG@5:0.1136) [9.6 s]
+INFO:root:Epoch 29    loss=0.4998 [11.2 s]    dev=(HR@5:0.1867,NDCG@5:0.1270) [10.5 s]
+INFO:root:Epoch 30    loss=0.5007 [13.3 s]    dev=(HR@5:0.1867,NDCG@5:0.1293) [9.4 s]
+INFO:root:Epoch 31    loss=0.4925 [11.6 s]    dev=(HR@5:0.2000,NDCG@5:0.1375) [9.7 s]
+INFO:root:Epoch 32    loss=0.4824 [10.9 s]    dev=(HR@5:0.2000,NDCG@5:0.1380) [9.6 s]
+INFO:root:Epoch 33    loss=0.4869 [10.9 s]    dev=(HR@5:0.2400,NDCG@5:0.1536) [9.5 s]
+INFO:root:Epoch 34    loss=0.4669 [10.8 s]    dev=(HR@5:0.2267,NDCG@5:0.1461) [9.5 s]
+INFO:root:Epoch 35    loss=0.4681 [10.4 s]    dev=(HR@5:0.2400,NDCG@5:0.1559) [9.4 s]
+INFO:root:Early stop at 35 based on dev result.
+INFO:root:
+Best Iter(dev)=   15	 dev=(HR@5:0.2400,NDCG@5:0.1680) [734.7 s] 
+INFO:root:Load model from ../model/GRU4Rec/GRU4Rec__Musical_Instruments__0__lr=0.001__l2=0.0001__emb_size=64__hidden_size=100.pt
+INFO:root:
+Test After Training: (HR@5:0.2133,NDCG@5:0.1305,HR@10:0.2667,NDCG@10:0.1463,HR@20:0.3333,NDCG@20:0.1634,HR@50:0.5600,NDCG@50:0.2071)
+INFO:root:
+--------------------------------------------- END: 2022-01-11 13:13:28 ---------------------------------------------
